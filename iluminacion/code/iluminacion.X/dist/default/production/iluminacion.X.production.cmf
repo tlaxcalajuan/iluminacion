@@ -1,0 +1,472 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/iluminacion.X.production.o
+cinit CODE 0 F F 13 2
+text1 CODE 0 B5 B5 26 2
+text2 CODE 0 1AF 1AF B 2
+text3 CODE 0 DB DB 20 2
+text4 CODE 0 192 192 11 2
+text5 CODE 0 8C 8C 29 2
+text6 CODE 0 150 150 16 2
+text7 CODE 0 11A 11A 1E 2
+text8 CODE 0 166 166 16 2
+text9 CODE 0 17C 17C 16 2
+text10 CODE 0 1C4 1C4 1 2
+text11 CODE 0 FB FB 1F 2
+text12 CODE 0 1A3 1A3 C 2
+text13 CODE 0 1BA 1BA A 2
+text14 CODE 0 22 22 39 2
+maintext CODE 0 5B 5B 31 2
+cstackCOMMON COMMON 1 70 70 7 1
+cstackBANK0 BANK0 1 28 28 3 1
+intentry CODE 0 4 4 8 2
+bssBANK0 BANK0 1 20 20 8 1
+strings STRING 0 138 138 18 2
+bssCOMMON COMMON 1 77 77 5 1
+config CONFIG 4 2007 2007 2 2
+$/tmp/xcXECppKA.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 C C 3 2
+config CONFIG 4 2007 2007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 2B-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 2B-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-3 2
+CONST 1C5-1FFF 2
+ENTRY 3-3 2
+ENTRY 1C5-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-3 2
+CODE 1C5-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7C-7D 1
+EEDATA 2100-21FF 2
+STRCODE 3-3 2
+STRCODE 1C5-1FFF 2
+STRING 3-3 2
+STRING 1C5-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/iluminacion.X.production.o
+F cinit CODE >543:/tmp/xcXBoMojb.s
+F cinit CODE >546:/tmp/xcXBoMojb.s
+F cinit CODE >575:/tmp/xcXBoMojb.s
+10 cinit CODE >576:/tmp/xcXBoMojb.s
+11 cinit CODE >577:/tmp/xcXBoMojb.s
+12 cinit CODE >578:/tmp/xcXBoMojb.s
+13 cinit CODE >579:/tmp/xcXBoMojb.s
+14 cinit CODE >582:/tmp/xcXBoMojb.s
+15 cinit CODE >583:/tmp/xcXBoMojb.s
+16 cinit CODE >584:/tmp/xcXBoMojb.s
+17 cinit CODE >585:/tmp/xcXBoMojb.s
+18 cinit CODE >586:/tmp/xcXBoMojb.s
+19 cinit CODE >587:/tmp/xcXBoMojb.s
+1A cinit CODE >588:/tmp/xcXBoMojb.s
+1B cinit CODE >589:/tmp/xcXBoMojb.s
+1C cinit CODE >590:/tmp/xcXBoMojb.s
+1D cinit CODE >591:/tmp/xcXBoMojb.s
+1E cinit CODE >597:/tmp/xcXBoMojb.s
+1E cinit CODE >599:/tmp/xcXBoMojb.s
+1F cinit CODE >600:/tmp/xcXBoMojb.s
+4 intentry CODE >41:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+22 text14 CODE >41:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+22 text14 CODE >42:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+26 text14 CODE >43:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+36 text14 CODE >44:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+37 text14 CODE >45:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+39 text14 CODE >46:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+44 text14 CODE >47:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+4E text14 CODE >48:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+54 text14 CODE >51:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1BA text13 CODE >33:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1BA text13 CODE >34:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1C0 text13 CODE >35:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1C2 text13 CODE >38:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1C3 text13 CODE >39:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1A3 text12 CODE >44:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1A4 text12 CODE >45:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1AA text12 CODE >46:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1AE text12 CODE >47:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+FB text11 CODE >53:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+FC text11 CODE >54:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+FD text11 CODE >56:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+109 text11 CODE >57:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+10D text11 CODE >54:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+119 text11 CODE >60:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1C4 text10 CODE >116:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1C4 text10 CODE >117:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1C4 text10 CODE >120:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+17C text9 CODE >98:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+17C text9 CODE >99:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+18B text9 CODE >100:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+191 text9 CODE >104:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+166 text8 CODE >107:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+166 text8 CODE >108:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+175 text8 CODE >109:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+17B text8 CODE >113:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+11A text7 CODE >123:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+11A text7 CODE >124:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+123 text7 CODE >125:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+12C text7 CODE >126:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+137 text7 CODE >127:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+150 text6 CODE >130:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+150 text6 CODE >131:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+15A text6 CODE >132:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+15F text6 CODE >133:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+165 text6 CODE >135:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+8C text5 CODE >55:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+8C text5 CODE >56:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+8E text5 CODE >57:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+91 text5 CODE >58:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+95 text5 CODE >59:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+98 text5 CODE >60:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+99 text5 CODE >61:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+9E text5 CODE >64:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+A4 text5 CODE >65:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+A8 text5 CODE >66:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+AB text5 CODE >63:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+AF text5 CODE >68:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+B0 text5 CODE >69:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+B4 text5 CODE >70:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+192 text4 CODE >20:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+192 text4 CODE >22:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+195 text4 CODE >23:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+196 text4 CODE >24:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+198 text4 CODE >25:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+19C text4 CODE >26:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1A0 text4 CODE >27:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+1A2 text4 CODE >28:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+DB text3 CODE >90:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+DB text3 CODE >91:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+E0 text3 CODE >92:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+E6 text3 CODE >93:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+F4 text3 CODE >94:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+FA text3 CODE >95:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1AF text2 CODE >34:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1AF text2 CODE >35:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1B3 text2 CODE >36:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1B7 text2 CODE >37:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+1B9 text2 CODE >38:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+B5 text1 CODE >73:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+B5 text1 CODE >76:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+C1 text1 CODE >77:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+C6 text1 CODE >78:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+C7 text1 CODE >79:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+C8 text1 CODE >78:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D4 text1 CODE >81:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D6 text1 CODE >82:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D7 text1 CODE >83:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D8 text1 CODE >84:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D9 text1 CODE >85:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+D9 text1 CODE >86:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+DA text1 CODE >87:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+5B maintext CODE >138:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+5B maintext CODE >139:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+5E maintext CODE >140:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+5F maintext CODE >141:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+62 maintext CODE >142:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+63 maintext CODE >143:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+64 maintext CODE >144:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+65 maintext CODE >145:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+66 maintext CODE >146:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+67 maintext CODE >147:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+68 maintext CODE >148:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+6A maintext CODE >151:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+6F maintext CODE >152:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+78 maintext CODE >153:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+7B maintext CODE >154:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+80 maintext CODE >155:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+83 maintext CODE >156:/home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hspace_0 1C5 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 4010 0 ABS 0 - -
+__size_of_HCSR04_GetDistance 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__size_of_initTMR0 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_SendChar_usart 35E 0 CODE 0 text12 dist/default/production/iluminacion.X.production.o
+__size_of_start_usart 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+_PIE1 8C 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RCIF 65 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_T0IE 5D 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TMR0 1 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRMT 4C1 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXECppKA.o
+_main B6 0 CODE 0 maintext dist/default/production/iluminacion.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+start 18 0 CODE 0 init /tmp/xcXECppKA.o
+__size_of_main 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__size_of_configTime 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXECppKA.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_initTMR0 35E 0 CODE 0 text2 dist/default/production/iluminacion.X.production.o
+wtemp0 7E 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+_changeConfigs 234 0 CODE 0 text7 dist/default/production/iluminacion.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_initTMR0 374 0 CODE 0 text2 dist/default/production/iluminacion.X.production.o
+__size_of_configDistance 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_ANSELH 189 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__size_of_SendText_usart 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_ReadChar_usart 374 0 CODE 0 text13 dist/default/production/iluminacion.X.production.o
+__size_of_configColor 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+_INTCON B 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_OPTION_REG 81 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXECppKA.o
+___stacklo 0 0 ABS 0 - /tmp/xcXECppKA.o
+configColor@B 73 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+configColor@G 72 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+configColor@R 74 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__size_of_inter 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_calandoUART 1B6 0 CODE 0 text3 dist/default/production/iluminacion.X.production.o
+start_initialization 1E 0 CODE 0 cinit dist/default/production/iluminacion.X.production.o
+__end_of_ReadChar_usart 388 0 CODE 0 text13 dist/default/production/iluminacion.X.production.o
+?_HCSR04_GetDistance 72 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__size_of_changeConfigs 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__pcstackBANK0 28 0 BANK0 1 cstackBANK0 dist/default/production/iluminacion.X.production.o
+_TMR0IF 5A 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISB0 430 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISB1 431 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISB3 433 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISB6 436 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISB7 437 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISC6 43E 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TRISC7 43F 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_start_usart 324 0 CODE 0 text4 dist/default/production/iluminacion.X.production.o
+__end_of_prende 1B6 0 CODE 0 text1 dist/default/production/iluminacion.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXECppKA.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 44 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 27A 0 STRING 0 strings dist/default/production/iluminacion.X.production.o
+HCSR04_GetDistance@centimeters 75 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+__end_of_changeConfigs 270 0 CODE 0 text7 dist/default/production/iluminacion.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4012 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit 1E 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+configDistance@distON 72 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 18 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 18 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__size_of_SendChar_usart 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_RB0 30 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RB1 31 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RB3 33 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RB6 36 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RB7 37 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__S0 1C5 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_cnt 20 0 BANK0 1 bssBANK0 dist/default/production/iluminacion.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_cntSeg 79 0 COMMON 1 bssCOMMON dist/default/production/iluminacion.X.production.o
+_configColor 388 0 CODE 0 text10 dist/default/production/iluminacion.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab 270 0 STRING 0 strings dist/default/production/iluminacion.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXECppKA.o
+__end_of_HCSR04_GetDistance 16A 0 CODE 0 text5 dist/default/production/iluminacion.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext10 388 0 CODE 0 text10 dist/default/production/iluminacion.X.production.o
+__ptext11 1F6 0 CODE 0 text11 dist/default/production/iluminacion.X.production.o
+__ptext12 346 0 CODE 0 text12 dist/default/production/iluminacion.X.production.o
+__ptext13 374 0 CODE 0 text13 dist/default/production/iluminacion.X.production.o
+__ptext14 44 0 CODE 0 text14 dist/default/production/iluminacion.X.production.o
+__end_of_Configure 2CC 0 CODE 0 text6 dist/default/production/iluminacion.X.production.o
+__pmaintext B6 0 CODE 0 maintext dist/default/production/iluminacion.X.production.o
+_configDistance 2F8 0 CODE 0 text9 dist/default/production/iluminacion.X.production.o
+__size_of_Configure 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+_prende 16A 0 CODE 0 text1 dist/default/production/iluminacion.X.production.o
+_SendText_usart 1F6 0 CODE 0 text11 dist/default/production/iluminacion.X.production.o
+_configTime 2CC 0 CODE 0 text8 dist/default/production/iluminacion.X.production.o
+_HCSR04_GetDistance 118 0 CODE 0 text5 dist/default/production/iluminacion.X.production.o
+_timeON 24 0 BANK0 1 bssBANK0 dist/default/production/iluminacion.X.production.o
+_Configure 2A0 0 CODE 0 text6 dist/default/production/iluminacion.X.production.o
+__end_of__stringtab 27C 0 STRING 0 strings dist/default/production/iluminacion.X.production.o
+__end_of_calandoUART 1F6 0 CODE 0 text3 dist/default/production/iluminacion.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production/iluminacion.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 18 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 3C 0 CODE 0 cinit dist/default/production/iluminacion.X.production.o
+__Hintentry 18 0 CODE 0 intentry -
+__size_of_prende 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__end_of_configDistance 324 0 CODE 0 text9 dist/default/production/iluminacion.X.production.o
+__Lstrings 0 0 ABS 0 strings -
+__size_of_ReadChar_usart 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_SendText_usart 234 0 CODE 0 text11 dist/default/production/iluminacion.X.production.o
+__end_of_start_usart 346 0 CODE 0 text4 dist/default/production/iluminacion.X.production.o
+__ptext1 16A 0 CODE 0 text1 dist/default/production/iluminacion.X.production.o
+__ptext2 35E 0 CODE 0 text2 dist/default/production/iluminacion.X.production.o
+__ptext3 1B6 0 CODE 0 text3 dist/default/production/iluminacion.X.production.o
+__ptext4 324 0 CODE 0 text4 dist/default/production/iluminacion.X.production.o
+__ptext5 118 0 CODE 0 text5 dist/default/production/iluminacion.X.production.o
+__ptext6 2A0 0 CODE 0 text6 dist/default/production/iluminacion.X.production.o
+__ptext7 234 0 CODE 0 text7 dist/default/production/iluminacion.X.production.o
+__ptext8 2CC 0 CODE 0 text8 dist/default/production/iluminacion.X.production.o
+__ptext9 2F8 0 CODE 0 text9 dist/default/production/iluminacion.X.production.o
+_distancia 77 0 COMMON 1 bssCOMMON dist/default/production/iluminacion.X.production.o
+__end_of_configTime 2F8 0 CODE 0 text8 dist/default/production/iluminacion.X.production.o
+configTime@tiempoON 72 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+SendChar_usart@caracter 72 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__end_of__initialization 3C 0 CODE 0 cinit dist/default/production/iluminacion.X.production.o
+_distanciaON 26 0 BANK0 1 bssBANK0 dist/default/production/iluminacion.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__Hend_init 1E 0 CODE 0 end_init -
+__end_of_main 118 0 CODE 0 maintext dist/default/production/iluminacion.X.production.o
+_ANSEL 188 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__end_of_inter B6 0 CODE 0 text14 dist/default/production/iluminacion.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_RCSTA 18 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_SendChar_usart 346 0 CODE 0 text12 dist/default/production/iluminacion.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+_TXSTA 98 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production/iluminacion.X.production.o
+_inter 44 0 CODE 0 text14 dist/default/production/iluminacion.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/iluminacion.X.production.o
+SendText_usart@cadena 74 0 COMMON 1 cstackCOMMON dist/default/production/iluminacion.X.production.o
+__end_of_configColor 38A 0 CODE 0 text10 dist/default/production/iluminacion.X.production.o
+__initialization 1E 0 CODE 0 cinit dist/default/production/iluminacion.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production/iluminacion.X.production.o
+__size_of_calandoUART 0 0 ABS 0 - dist/default/production/iluminacion.X.production.o
+__pstrings 270 0 STRING 0 strings dist/default/production/iluminacion.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text6 0 150 2A0 75 2
+cstackCOMMON 1 70 70 C 1
+intentry 0 4 8 134 2
+reset_vec 0 0 0 3 2
+bssBANK0 1 20 20 B 1
+strings 0 138 270 18 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

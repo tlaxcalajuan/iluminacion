@@ -1,0 +1,196 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"20 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+[v _start_usart start_usart `(v  1 e 1 0 ]
+"33
+[v _ReadChar_usart ReadChar_usart `(uc  1 e 1 0 ]
+"44
+[v _SendChar_usart SendChar_usart `(v  1 e 1 0 ]
+"53
+[v _SendText_usart SendText_usart `(v  1 e 1 0 ]
+"10 /opt/microchip/xc8/v2.30/pic/sources/c90/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 /opt/microchip/xc8/v2.30/pic/sources/c90/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v2.30/pic/sources/c90/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"34 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+[v _initTMR0 initTMR0 `(v  1 e 1 0 ]
+"41
+[v _inter inter `II(v  1 e 1 0 ]
+"55
+[v _HCSR04_GetDistance HCSR04_GetDistance `(ui  1 e 2 0 ]
+"73
+[v _prende prende `(v  1 e 1 0 ]
+"90
+[v _calandoUART calandoUART `(v  1 e 1 0 ]
+"98
+[v _configDistance configDistance `(v  1 e 1 0 ]
+"107
+[v _configTime configTime `(v  1 e 1 0 ]
+"116
+[v _configColor configColor `(v  1 e 1 0 ]
+"123
+[v _changeConfigs changeConfigs `(v  1 e 1 0 ]
+"130
+[v _Configure Configure `(v  1 e 1 0 ]
+"138
+[v _main main `(v  1 e 1 0 ]
+"59 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"1038
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1702
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"2556
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4103
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"4106
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"4112
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"4121
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"4124
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"4175
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"4319
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"4361
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"4424
+[v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
+"4427
+[v _TRISB1 TRISB1 `VEb  1 e 0 @1073 ]
+"4433
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1075 ]
+"4442
+[v _TRISB6 TRISB6 `VEb  1 e 0 @1078 ]
+"4445
+[v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
+"4466
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"4469
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"4508
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"20 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+[v _cnt cnt `ul  1 e 4 0 ]
+"21
+[v _cntSeg cntSeg `ui  1 e 2 0 ]
+"28
+[v _distancia distancia `ui  1 e 2 0 ]
+"30
+[v _distanciaON distanciaON `ui  1 e 2 0 ]
+"31
+[v _timeON timeON `ui  1 e 2 0 ]
+"138
+[v _main main `(v  1 e 1 0 ]
+{
+"159
+} 0
+"73
+[v _prende prende `(v  1 e 1 0 ]
+{
+"87
+} 0
+"34
+[v _initTMR0 initTMR0 `(v  1 e 1 0 ]
+{
+"38
+} 0
+"90
+[v _calandoUART calandoUART `(v  1 e 1 0 ]
+{
+"95
+} 0
+"20 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+[v _start_usart start_usart `(v  1 e 1 0 ]
+{
+"28
+} 0
+"55 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+[v _HCSR04_GetDistance HCSR04_GetDistance `(ui  1 e 2 0 ]
+{
+"56
+[v HCSR04_GetDistance@centimeters centimeters `ui  1 a 2 5 ]
+"70
+} 0
+"130
+[v _Configure Configure `(v  1 e 1 0 ]
+{
+"135
+} 0
+"123
+[v _changeConfigs changeConfigs `(v  1 e 1 0 ]
+{
+"127
+} 0
+"107
+[v _configTime configTime `(v  1 e 1 0 ]
+{
+[v configTime@tiempoON tiempoON `ui  1 p 2 2 ]
+"113
+} 0
+"98
+[v _configDistance configDistance `(v  1 e 1 0 ]
+{
+[v configDistance@distON distON `ui  1 p 2 2 ]
+"104
+} 0
+"116
+[v _configColor configColor `(v  1 e 1 0 ]
+{
+[v configColor@R R `uc  1 a 1 wreg ]
+[v configColor@R R `uc  1 a 1 wreg ]
+[v configColor@G G `uc  1 p 1 2 ]
+[v configColor@B B `uc  1 p 1 3 ]
+"120
+} 0
+"53 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/USARTlib.h
+[v _SendText_usart SendText_usart `(v  1 e 1 0 ]
+{
+[v SendText_usart@cadena cadena `*.24uc  1 a 1 wreg ]
+[v SendText_usart@cadena cadena `*.24uc  1 a 1 wreg ]
+[v SendText_usart@cadena cadena `*.24uc  1 a 1 4 ]
+"60
+} 0
+"44
+[v _SendChar_usart SendChar_usart `(v  1 e 1 0 ]
+{
+[v SendChar_usart@caracter caracter `uc  1 a 1 wreg ]
+[v SendChar_usart@caracter caracter `uc  1 a 1 wreg ]
+[v SendChar_usart@caracter caracter `uc  1 a 1 2 ]
+"47
+} 0
+"33
+[v _ReadChar_usart ReadChar_usart `(uc  1 e 1 0 ]
+{
+"39
+} 0
+"41 /home/tlaxcala/MPLABXProjects/iluminacion/code/iluminacion.X/main.c
+[v _inter inter `II(v  1 e 1 0 ]
+{
+"51
+} 0

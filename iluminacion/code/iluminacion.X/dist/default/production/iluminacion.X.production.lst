@@ -1,0 +1,2017 @@
+
+
+Microchip MPLAB XC8 Assembler V2.30 build 20200825195618 
+                                                                                               Tue Oct 13 06:00:26 2020
+
+Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	strings,global,class=STRING,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     9                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    10                           	psect	maintext,global,class=CODE,split=1,delta=2
+    11                           	psect	text1,local,class=CODE,merge=1,delta=2
+    12                           	psect	text2,local,class=CODE,merge=1,delta=2
+    13                           	psect	text3,local,class=CODE,merge=1,delta=2
+    14                           	psect	text4,local,class=CODE,merge=1,delta=2
+    15                           	psect	text5,local,class=CODE,merge=1,delta=2
+    16                           	psect	text6,local,class=CODE,merge=1,delta=2
+    17                           	psect	text7,local,class=CODE,merge=1,delta=2
+    18                           	psect	text8,local,class=CODE,merge=1,delta=2
+    19                           	psect	text9,local,class=CODE,merge=1,delta=2
+    20                           	psect	text10,local,class=CODE,merge=1,delta=2
+    21                           	psect	text11,local,class=CODE,merge=1,delta=2
+    22                           	psect	text12,local,class=CODE,merge=1,delta=2
+    23                           	psect	text13,local,class=CODE,merge=1,delta=2
+    24                           	psect	text14,local,class=CODE,merge=1,delta=2
+    25                           	psect	intentry,global,class=CODE,delta=2
+    26                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    27                           	dabs	1,0x7E,2
+    28  0000                     
+    29                           ; Version 2.20
+    30                           ; Generated 12/02/2020 GMT
+    31                           ; 
+    32                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    33                           ; All rights reserved.
+    34                           ; 
+    35                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    36                           ; 
+    37                           ; Redistribution and use in source and binary forms, with or without modification, are
+    38                           ; permitted provided that the following conditions are met:
+    39                           ; 
+    40                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    41                           ;        conditions and the following disclaimer.
+    42                           ; 
+    43                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    44                           ;        of conditions and the following disclaimer in the documentation and/or other
+    45                           ;        materials provided with the distribution.
+    46                           ; 
+    47                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    48                           ;        software without specific prior written permission.
+    49                           ; 
+    50                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    51                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    52                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    53                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    54                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    55                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    56                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    57                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    58                           ; 
+    59                           ; 
+    60                           ; Code-generator required, PIC16F887 Definitions
+    61                           ; 
+    62                           ; SFR Addresses
+    63  0000                     	;# 
+    64  0001                     	;# 
+    65  0002                     	;# 
+    66  0003                     	;# 
+    67  0004                     	;# 
+    68  0005                     	;# 
+    69  0006                     	;# 
+    70  0007                     	;# 
+    71  0008                     	;# 
+    72  0009                     	;# 
+    73  000A                     	;# 
+    74  000B                     	;# 
+    75  000C                     	;# 
+    76  000D                     	;# 
+    77  000E                     	;# 
+    78  000E                     	;# 
+    79  000F                     	;# 
+    80  0010                     	;# 
+    81  0011                     	;# 
+    82  0012                     	;# 
+    83  0013                     	;# 
+    84  0014                     	;# 
+    85  0015                     	;# 
+    86  0015                     	;# 
+    87  0016                     	;# 
+    88  0017                     	;# 
+    89  0018                     	;# 
+    90  0019                     	;# 
+    91  001A                     	;# 
+    92  001B                     	;# 
+    93  001B                     	;# 
+    94  001C                     	;# 
+    95  001D                     	;# 
+    96  001E                     	;# 
+    97  001F                     	;# 
+    98  0081                     	;# 
+    99  0085                     	;# 
+   100  0086                     	;# 
+   101  0087                     	;# 
+   102  0088                     	;# 
+   103  0089                     	;# 
+   104  008C                     	;# 
+   105  008D                     	;# 
+   106  008E                     	;# 
+   107  008F                     	;# 
+   108  0090                     	;# 
+   109  0091                     	;# 
+   110  0092                     	;# 
+   111  0093                     	;# 
+   112  0093                     	;# 
+   113  0093                     	;# 
+   114  0094                     	;# 
+   115  0095                     	;# 
+   116  0096                     	;# 
+   117  0097                     	;# 
+   118  0098                     	;# 
+   119  0099                     	;# 
+   120  009A                     	;# 
+   121  009B                     	;# 
+   122  009C                     	;# 
+   123  009D                     	;# 
+   124  009E                     	;# 
+   125  009F                     	;# 
+   126  0105                     	;# 
+   127  0107                     	;# 
+   128  0108                     	;# 
+   129  0109                     	;# 
+   130  010C                     	;# 
+   131  010C                     	;# 
+   132  010D                     	;# 
+   133  010E                     	;# 
+   134  010F                     	;# 
+   135  0185                     	;# 
+   136  0187                     	;# 
+   137  0188                     	;# 
+   138  0189                     	;# 
+   139  018C                     	;# 
+   140  018D                     	;# 
+   141  0000                     	;# 
+   142  0001                     	;# 
+   143  0002                     	;# 
+   144  0003                     	;# 
+   145  0004                     	;# 
+   146  0005                     	;# 
+   147  0006                     	;# 
+   148  0007                     	;# 
+   149  0008                     	;# 
+   150  0009                     	;# 
+   151  000A                     	;# 
+   152  000B                     	;# 
+   153  000C                     	;# 
+   154  000D                     	;# 
+   155  000E                     	;# 
+   156  000E                     	;# 
+   157  000F                     	;# 
+   158  0010                     	;# 
+   159  0011                     	;# 
+   160  0012                     	;# 
+   161  0013                     	;# 
+   162  0014                     	;# 
+   163  0015                     	;# 
+   164  0015                     	;# 
+   165  0016                     	;# 
+   166  0017                     	;# 
+   167  0018                     	;# 
+   168  0019                     	;# 
+   169  001A                     	;# 
+   170  001B                     	;# 
+   171  001B                     	;# 
+   172  001C                     	;# 
+   173  001D                     	;# 
+   174  001E                     	;# 
+   175  001F                     	;# 
+   176  0081                     	;# 
+   177  0085                     	;# 
+   178  0086                     	;# 
+   179  0087                     	;# 
+   180  0088                     	;# 
+   181  0089                     	;# 
+   182  008C                     	;# 
+   183  008D                     	;# 
+   184  008E                     	;# 
+   185  008F                     	;# 
+   186  0090                     	;# 
+   187  0091                     	;# 
+   188  0092                     	;# 
+   189  0093                     	;# 
+   190  0093                     	;# 
+   191  0093                     	;# 
+   192  0094                     	;# 
+   193  0095                     	;# 
+   194  0096                     	;# 
+   195  0097                     	;# 
+   196  0098                     	;# 
+   197  0099                     	;# 
+   198  009A                     	;# 
+   199  009B                     	;# 
+   200  009C                     	;# 
+   201  009D                     	;# 
+   202  009E                     	;# 
+   203  009F                     	;# 
+   204  0105                     	;# 
+   205  0107                     	;# 
+   206  0108                     	;# 
+   207  0109                     	;# 
+   208  010C                     	;# 
+   209  010C                     	;# 
+   210  010D                     	;# 
+   211  010E                     	;# 
+   212  010F                     	;# 
+   213  0185                     	;# 
+   214  0187                     	;# 
+   215  0188                     	;# 
+   216  0189                     	;# 
+   217  018C                     	;# 
+   218  018D                     	;# 
+   219  0001                     _TMR0	set	1
+   220  0019                     _TXREG	set	25
+   221  001A                     _RCREG	set	26
+   222  000B                     _INTCON	set	11
+   223  0018                     _RCSTA	set	24
+   224  0033                     _RB3	set	51
+   225  005D                     _T0IE	set	93
+   226  0031                     _RB1	set	49
+   227  0037                     _RB7	set	55
+   228  0030                     _RB0	set	48
+   229  0036                     _RB6	set	54
+   230  005A                     _TMR0IF	set	90
+   231  0065                     _RCIF	set	101
+   232  008C                     _PIE1	set	140
+   233  0081                     _OPTION_REG	set	129
+   234  0099                     _SPBRG	set	153
+   235  0098                     _TXSTA	set	152
+   236  0433                     _TRISB3	set	1075
+   237  0430                     _TRISB0	set	1072
+   238  0431                     _TRISB1	set	1073
+   239  0437                     _TRISB7	set	1079
+   240  0436                     _TRISB6	set	1078
+   241  04C1                     _TRMT	set	1217
+   242  043E                     _TRISC6	set	1086
+   243  043F                     _TRISC7	set	1087
+   244  0189                     _ANSELH	set	393
+   245  0188                     _ANSEL	set	392
+   246                           
+   247                           	psect	strings
+   248  0138                     __pstrings:
+   249  0138                     stringtab:
+   250  0138                     __stringtab:
+   251  0138                     stringcode:	
+   252                           ;	String table - string pointers are 1 byte each
+   253                           
+   254  0138                     stringdir:
+   255  0138  3001               	movlw	high stringdir
+   256  0139  008A               	movwf	10
+   257  013A  0804               	movf	4,w
+   258  013B  0A84               	incf	4,f
+   259  013C  0782               	addwf	2,f
+   260  013D                     __stringbase:
+   261  013D  3400               	retlw	0
+   262  013E                     __end_of__stringtab:
+   263  013E                     STR_2:
+   264  013E  3473               	retlw	115	;'s'
+   265  013F  3461               	retlw	97	;'a'
+   266  0140  3476               	retlw	118	;'v'
+   267  0141  3465               	retlw	101	;'e'
+   268  0142  3420               	retlw	32	;' '
+   269  0143  3463               	retlw	99	;'c'
+   270  0144  346F               	retlw	111	;'o'
+   271  0145  346E               	retlw	110	;'n'
+   272  0146  3466               	retlw	102	;'f'
+   273  0147  3469               	retlw	105	;'i'
+   274  0148  3467               	retlw	103	;'g'
+   275  0149  3473               	retlw	115	;'s'
+   276  014A  3400               	retlw	0
+   277  014B                     STR_1:
+   278  014B  3464               	retlw	100	;'d'
+   279  014C  3466               	retlw	102	;'f'
+   280  014D  3466               	retlw	102	;'f'
+   281  014E  3466               	retlw	102	;'f'
+   282  014F  3400               	retlw	0
+   283                           
+   284                           	psect	cinit
+   285  000F                     start_initialization:	
+   286                           ; #config settings
+   287                           
+   288  000F                     __initialization:
+   289                           
+   290                           ; Clear objects allocated to COMMON
+   291  000F  01F7               	clrf	__pbssCOMMON& (0+127)
+   292  0010  01F8               	clrf	(__pbssCOMMON+1)& (0+127)
+   293  0011  01F9               	clrf	(__pbssCOMMON+2)& (0+127)
+   294  0012  01FA               	clrf	(__pbssCOMMON+3)& (0+127)
+   295  0013  01FB               	clrf	(__pbssCOMMON+4)& (0+127)
+   296                           
+   297                           ; Clear objects allocated to BANK0
+   298  0014  1283               	bcf	3,5	;RP0=0, select bank0
+   299  0015  1303               	bcf	3,6	;RP1=0, select bank0
+   300  0016  01A0               	clrf	__pbssBANK0& (0+127)
+   301  0017  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   302  0018  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   303  0019  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   304  001A  01A4               	clrf	(__pbssBANK0+4)& (0+127)
+   305  001B  01A5               	clrf	(__pbssBANK0+5)& (0+127)
+   306  001C  01A6               	clrf	(__pbssBANK0+6)& (0+127)
+   307  001D  01A7               	clrf	(__pbssBANK0+7)& (0+127)
+   308  001E                     end_of_initialization:	
+   309                           ;End of C runtime variable initialization code
+   310                           
+   311  001E                     __end_of__initialization:
+   312  001E  0183               	clrf	3
+   313  001F  120A  118A  285B   	ljmp	_main	;jump to C main() function
+   314                           
+   315                           	psect	bssCOMMON
+   316  0077                     __pbssCOMMON:
+   317  0077                     _distancia:
+   318  0077                     	ds	2
+   319  0079                     _cntSeg:
+   320  0079                     	ds	2
+   321  007B                     _tmrStatus:
+   322  007B                     	ds	1
+   323                           
+   324                           	psect	bssBANK0
+   325  0020                     __pbssBANK0:
+   326  0020                     _cnt:
+   327  0020                     	ds	4
+   328  0024                     _timeON:
+   329  0024                     	ds	2
+   330  0026                     _distanciaON:
+   331  0026                     	ds	2
+   332                           
+   333                           	psect	cstackCOMMON
+   334  0070                     __pcstackCOMMON:
+   335  0070                     ?_start_usart:
+   336  0070                     ?_ReadChar_usart:	
+   337                           ; 1 bytes @ 0x0
+   338                           
+   339  0070                     ?_SendChar_usart:	
+   340                           ; 1 bytes @ 0x0
+   341                           
+   342  0070                     ?_SendText_usart:	
+   343                           ; 1 bytes @ 0x0
+   344                           
+   345  0070                     ?_initTMR0:	
+   346                           ; 1 bytes @ 0x0
+   347                           
+   348  0070                     ?_inter:	
+   349                           ; 1 bytes @ 0x0
+   350                           
+   351  0070                     ??_inter:	
+   352                           ; 1 bytes @ 0x0
+   353                           
+   354  0070                     ?_prende:	
+   355                           ; 1 bytes @ 0x0
+   356                           
+   357  0070                     ?_calandoUART:	
+   358                           ; 1 bytes @ 0x0
+   359                           
+   360  0070                     ?_changeConfigs:	
+   361                           ; 1 bytes @ 0x0
+   362                           
+   363  0070                     ?_Configure:	
+   364                           ; 1 bytes @ 0x0
+   365                           
+   366  0070                     ?_main:	
+   367                           ; 1 bytes @ 0x0
+   368                           
+   369                           
+   370                           ; 1 bytes @ 0x0
+   371  0070                     	ds	2
+   372  0072                     ??_start_usart:
+   373  0072                     ??_ReadChar_usart:	
+   374                           ; 1 bytes @ 0x2
+   375                           
+   376  0072                     ??_SendChar_usart:	
+   377                           ; 1 bytes @ 0x2
+   378                           
+   379  0072                     ??_initTMR0:	
+   380                           ; 1 bytes @ 0x2
+   381                           
+   382  0072                     ??_prende:	
+   383                           ; 1 bytes @ 0x2
+   384                           
+   385  0072                     ?_configDistance:	
+   386                           ; 1 bytes @ 0x2
+   387                           
+   388  0072                     ?_configTime:	
+   389                           ; 1 bytes @ 0x2
+   390                           
+   391  0072                     ?_configColor:	
+   392                           ; 1 bytes @ 0x2
+   393                           
+   394  0072                     ?_HCSR04_GetDistance:	
+   395                           ; 1 bytes @ 0x2
+   396                           
+   397  0072                     SendChar_usart@caracter:	
+   398                           ; 2 bytes @ 0x2
+   399                           
+   400  0072                     configColor@G:	
+   401                           ; 1 bytes @ 0x2
+   402                           
+   403  0072                     configDistance@distON:	
+   404                           ; 1 bytes @ 0x2
+   405                           
+   406  0072                     configTime@tiempoON:	
+   407                           ; 2 bytes @ 0x2
+   408                           
+   409                           
+   410                           ; 2 bytes @ 0x2
+   411  0072                     	ds	1
+   412  0073                     ??_SendText_usart:
+   413  0073                     configColor@B:	
+   414                           ; 1 bytes @ 0x3
+   415                           
+   416                           
+   417                           ; 1 bytes @ 0x3
+   418  0073                     	ds	1
+   419  0074                     ??_HCSR04_GetDistance:
+   420  0074                     ??_configDistance:	
+   421                           ; 1 bytes @ 0x4
+   422                           
+   423  0074                     ??_configTime:	
+   424                           ; 1 bytes @ 0x4
+   425                           
+   426  0074                     ??_configColor:	
+   427                           ; 1 bytes @ 0x4
+   428                           
+   429  0074                     SendText_usart@cadena:	
+   430                           ; 1 bytes @ 0x4
+   431                           
+   432  0074                     configColor@R:	
+   433                           ; 1 bytes @ 0x4
+   434                           
+   435                           
+   436                           ; 1 bytes @ 0x4
+   437  0074                     	ds	1
+   438  0075                     ??_changeConfigs:
+   439  0075                     HCSR04_GetDistance@centimeters:	
+   440                           ; 1 bytes @ 0x5
+   441                           
+   442                           
+   443                           ; 2 bytes @ 0x5
+   444  0075                     	ds	1
+   445  0076                     ??_Configure:
+   446                           
+   447                           ; 1 bytes @ 0x6
+   448  0076                     	ds	1
+   449  0077                     ??_main:
+   450                           
+   451                           	psect	cstackBANK0
+   452  0028                     __pcstackBANK0:	
+   453                           ; 1 bytes @ 0x7
+   454                           
+   455  0028                     ??_calandoUART:
+   456                           
+   457                           ; 1 bytes @ 0x0
+   458  0028                     	ds	3
+   459                           
+   460                           	psect	maintext
+   461  005B                     __pmaintext:	
+   462 ;;
+   463 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   464 ;;
+   465 ;; *************** function _main *****************
+   466 ;; Defined at:
+   467 ;;		line 138 in file "main.c"
+   468 ;; Parameters:    Size  Location     Type
+   469 ;;		None
+   470 ;; Auto vars:     Size  Location     Type
+   471 ;;		None
+   472 ;; Return value:  Size  Location     Type
+   473 ;;                  1    wreg      void 
+   474 ;; Registers used:
+   475 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   476 ;; Tracked objects:
+   477 ;;		On entry : B00/0
+   478 ;;		On exit  : 0/0
+   479 ;;		Unchanged: 0/0
+   480 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   481 ;;      Params:         0       0       0       0       0
+   482 ;;      Locals:         0       0       0       0       0
+   483 ;;      Temps:          0       0       0       0       0
+   484 ;;      Totals:         0       0       0       0       0
+   485 ;;Total ram usage:        0 bytes
+   486 ;; Hardware stack levels required when called:    4
+   487 ;; This function calls:
+   488 ;;		_Configure
+   489 ;;		_HCSR04_GetDistance
+   490 ;;		_calandoUART
+   491 ;;		_prende
+   492 ;; This function is called by:
+   493 ;;		Startup code after reset
+   494 ;; This function uses a non-reentrant model
+   495 ;;
+   496                           
+   497                           
+   498                           ;psect for function _main
+   499  005B                     _main:
+   500  005B                     l982:	
+   501                           ;incstack = 0
+   502                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   503                           
+   504                           
+   505                           ;main.c: 139:     ANSEL=0;
+   506  005B  1683               	bsf	3,5	;RP0=1, select bank3
+   507  005C  1703               	bsf	3,6	;RP1=1, select bank3
+   508  005D  0188               	clrf	8	;volatile
+   509                           
+   510                           ;main.c: 140:     ANSELH=0;
+   511  005E  0189               	clrf	9	;volatile
+   512  005F                     l984:
+   513                           
+   514                           ;main.c: 141:     TRISB6=0;
+   515  005F  1683               	bsf	3,5	;RP0=1, select bank1
+   516  0060  1303               	bcf	3,6	;RP1=0, select bank1
+   517  0061  1306               	bcf	6,6	;volatile
+   518  0062                     l986:
+   519                           
+   520                           ;main.c: 142:     TRISB7=1;
+   521  0062  1786               	bsf	6,7	;volatile
+   522  0063                     l988:
+   523                           
+   524                           ;main.c: 143:     TRISB1=0;
+   525  0063  1086               	bcf	6,1	;volatile
+   526  0064                     l990:
+   527                           
+   528                           ;main.c: 144:     TRISB0=0;
+   529  0064  1006               	bcf	6,0	;volatile
+   530  0065                     l992:
+   531                           
+   532                           ;main.c: 145:     TRISB3=0;
+   533  0065  1186               	bcf	6,3	;volatile
+   534  0066                     l994:
+   535                           
+   536                           ;main.c: 146:     TRISC7=1;
+   537  0066  1787               	bsf	7,7	;volatile
+   538  0067                     l996:
+   539                           
+   540                           ;main.c: 147:     TRISC6=0;
+   541  0067  1307               	bcf	7,6	;volatile
+   542  0068                     l998:
+   543                           
+   544                           ;main.c: 148:     PIE1=0b00110000;
+   545  0068  3030               	movlw	48
+   546  0069  008C               	movwf	12	;volatile
+   547  006A                     l1000:
+   548                           
+   549                           ;main.c: 151:         Configure();
+   550  006A  120A  118A  2150  120A  118A  	fcall	_Configure
+   551  006F                     l1002:
+   552                           
+   553                           ;main.c: 152:         distancia=HCSR04_GetDistance();
+   554  006F  120A  118A  208C  120A  118A  	fcall	_HCSR04_GetDistance
+   555  0074  0873               	movf	?_HCSR04_GetDistance+1,w
+   556  0075  00F8               	movwf	_distancia+1
+   557  0076  0872               	movf	?_HCSR04_GetDistance,w
+   558  0077  00F7               	movwf	_distancia
+   559  0078                     l1004:
+   560                           
+   561                           ;main.c: 153:         RB1=0;
+   562  0078  1283               	bcf	3,5	;RP0=0, select bank0
+   563  0079  1303               	bcf	3,6	;RP1=0, select bank0
+   564  007A  1086               	bcf	6,1	;volatile
+   565  007B                     l1006:
+   566                           
+   567                           ;main.c: 154:         prende();
+   568  007B  120A  118A  20B5  120A  118A  	fcall	_prende
+   569  0080                     l1008:
+   570                           
+   571                           ;main.c: 155:         RB3=0;
+   572  0080  1283               	bcf	3,5	;RP0=0, select bank0
+   573  0081  1303               	bcf	3,6	;RP1=0, select bank0
+   574  0082  1186               	bcf	6,3	;volatile
+   575  0083                     l1010:
+   576                           
+   577                           ;main.c: 156:         calandoUART();
+   578  0083  120A  118A  20DB  120A  118A  	fcall	_calandoUART
+   579  0088  286A               	goto	l1000
+   580  0089  120A  118A  280C   	ljmp	start
+   581  008C                     __end_of_main:
+   582                           
+   583                           	psect	text1
+   584  00B5                     __ptext1:	
+   585 ;; *************** function _prende *****************
+   586 ;; Defined at:
+   587 ;;		line 73 in file "main.c"
+   588 ;; Parameters:    Size  Location     Type
+   589 ;;		None
+   590 ;; Auto vars:     Size  Location     Type
+   591 ;;		None
+   592 ;; Return value:  Size  Location     Type
+   593 ;;                  1    wreg      void 
+   594 ;; Registers used:
+   595 ;;		wreg, status,2, status,0, pclath, cstack
+   596 ;; Tracked objects:
+   597 ;;		On entry : 0/0
+   598 ;;		On exit  : 0/0
+   599 ;;		Unchanged: 0/0
+   600 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   601 ;;      Params:         0       0       0       0       0
+   602 ;;      Locals:         0       0       0       0       0
+   603 ;;      Temps:          0       0       0       0       0
+   604 ;;      Totals:         0       0       0       0       0
+   605 ;;Total ram usage:        0 bytes
+   606 ;; Hardware stack levels used:    1
+   607 ;; Hardware stack levels required when called:    2
+   608 ;; This function calls:
+   609 ;;		_initTMR0
+   610 ;; This function is called by:
+   611 ;;		_main
+   612 ;; This function uses a non-reentrant model
+   613 ;;
+   614                           
+   615                           
+   616                           ;psect for function _prende
+   617  00B5                     _prende:
+   618  00B5                     l914:	
+   619                           ;incstack = 0
+   620                           ; Regs used in _prende: [wreg+status,2+status,0+pclath+cstack]
+   621                           
+   622                           
+   623                           ;main.c: 76:     if(distancia<=distanciaON){
+   624  00B5  0878               	movf	_distancia+1,w
+   625  00B6  1283               	bcf	3,5	;RP0=0, select bank0
+   626  00B7  1303               	bcf	3,6	;RP1=0, select bank0
+   627  00B8  0227               	subwf	_distanciaON+1,w
+   628  00B9  1D03               	skipz
+   629  00BA  28BD               	goto	u225
+   630  00BB  0877               	movf	_distancia,w
+   631  00BC  0226               	subwf	_distanciaON,w
+   632  00BD                     u225:
+   633  00BD  1C03               	skipc
+   634  00BE  28C0               	goto	u221
+   635  00BF  28C1               	goto	u220
+   636  00C0                     u221:
+   637  00C0  28D8               	goto	l109
+   638  00C1                     u220:
+   639  00C1                     l916:
+   640                           
+   641                           ;main.c: 77:         initTMR0();
+   642  00C1  120A  118A  21AF  120A  118A  	fcall	_initTMR0
+   643                           
+   644                           ;main.c: 78:         while(cntSeg<=timeON){
+   645  00C6  28C8               	goto	l918
+   646  00C7                     l111:
+   647                           
+   648                           ;main.c: 79:             RB1=1;
+   649  00C7  1486               	bsf	6,1	;volatile
+   650  00C8                     l918:
+   651                           
+   652                           ;main.c: 78:         while(cntSeg<=timeON){
+   653  00C8  087A               	movf	_cntSeg+1,w
+   654  00C9  1283               	bcf	3,5	;RP0=0, select bank0
+   655  00CA  1303               	bcf	3,6	;RP1=0, select bank0
+   656  00CB  0225               	subwf	_timeON+1,w
+   657  00CC  1D03               	skipz
+   658  00CD  28D0               	goto	u235
+   659  00CE  0879               	movf	_cntSeg,w
+   660  00CF  0224               	subwf	_timeON,w
+   661  00D0                     u235:
+   662  00D0  1803               	skipnc
+   663  00D1  28D3               	goto	u231
+   664  00D2  28D4               	goto	u230
+   665  00D3                     u231:
+   666  00D3  28C7               	goto	l111
+   667  00D4                     u230:
+   668  00D4                     l920:
+   669                           
+   670                           ;main.c: 81:         cntSeg=0;
+   671  00D4  01F9               	clrf	_cntSeg
+   672  00D5  01FA               	clrf	_cntSeg+1
+   673  00D6                     l922:
+   674                           
+   675                           ;main.c: 82:         T0IE=0;
+   676  00D6  128B               	bcf	11,5	;volatile
+   677                           
+   678                           ;main.c: 83:     }else{
+   679  00D7  28D9               	goto	l113
+   680  00D8                     l109:
+   681                           
+   682                           ;main.c: 84:         RB1=0;
+   683  00D8  1086               	bcf	6,1	;volatile
+   684  00D9                     l113:	
+   685                           ;main.c: 85:     }
+   686                           
+   687                           
+   688                           ;main.c: 86:     RB1=0;
+   689  00D9  1086               	bcf	6,1	;volatile
+   690  00DA                     l114:
+   691  00DA  0008               	return
+   692  00DB                     __end_of_prende:
+   693                           
+   694                           	psect	text2
+   695  01AF                     __ptext2:	
+   696 ;; *************** function _initTMR0 *****************
+   697 ;; Defined at:
+   698 ;;		line 34 in file "main.c"
+   699 ;; Parameters:    Size  Location     Type
+   700 ;;		None
+   701 ;; Auto vars:     Size  Location     Type
+   702 ;;		None
+   703 ;; Return value:  Size  Location     Type
+   704 ;;                  1    wreg      void 
+   705 ;; Registers used:
+   706 ;;		wreg
+   707 ;; Tracked objects:
+   708 ;;		On entry : 0/0
+   709 ;;		On exit  : 0/0
+   710 ;;		Unchanged: 0/0
+   711 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   712 ;;      Params:         0       0       0       0       0
+   713 ;;      Locals:         0       0       0       0       0
+   714 ;;      Temps:          0       0       0       0       0
+   715 ;;      Totals:         0       0       0       0       0
+   716 ;;Total ram usage:        0 bytes
+   717 ;; Hardware stack levels used:    1
+   718 ;; Hardware stack levels required when called:    1
+   719 ;; This function calls:
+   720 ;;		Nothing
+   721 ;; This function is called by:
+   722 ;;		_prende
+   723 ;; This function uses a non-reentrant model
+   724 ;;
+   725                           
+   726                           
+   727                           ;psect for function _initTMR0
+   728  01AF                     _initTMR0:
+   729  01AF                     l888:	
+   730                           ;incstack = 0
+   731                           ; Regs used in _initTMR0: [wreg]
+   732                           
+   733                           
+   734                           ;main.c: 35:   OPTION_REG = 0x82;
+   735  01AF  3082               	movlw	130
+   736  01B0  1683               	bsf	3,5	;RP0=1, select bank1
+   737  01B1  1303               	bcf	3,6	;RP1=0, select bank1
+   738  01B2  0081               	movwf	1	;volatile
+   739                           
+   740                           ;main.c: 36:   TMR0 = 6;
+   741  01B3  3006               	movlw	6
+   742  01B4  1283               	bcf	3,5	;RP0=0, select bank0
+   743  01B5  1303               	bcf	3,6	;RP1=0, select bank0
+   744  01B6  0081               	movwf	1	;volatile
+   745                           
+   746                           ;main.c: 37:   INTCON = 0xA0;
+   747  01B7  30A0               	movlw	160
+   748  01B8  008B               	movwf	11	;volatile
+   749  01B9                     l90:
+   750  01B9  0008               	return
+   751  01BA                     __end_of_initTMR0:
+   752                           
+   753                           	psect	text3
+   754  00DB                     __ptext3:	
+   755 ;; *************** function _calandoUART *****************
+   756 ;; Defined at:
+   757 ;;		line 90 in file "main.c"
+   758 ;; Parameters:    Size  Location     Type
+   759 ;;		None
+   760 ;; Auto vars:     Size  Location     Type
+   761 ;;		None
+   762 ;; Return value:  Size  Location     Type
+   763 ;;                  1    wreg      void 
+   764 ;; Registers used:
+   765 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   766 ;; Tracked objects:
+   767 ;;		On entry : 0/0
+   768 ;;		On exit  : 0/0
+   769 ;;		Unchanged: 0/0
+   770 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   771 ;;      Params:         0       0       0       0       0
+   772 ;;      Locals:         0       0       0       0       0
+   773 ;;      Temps:          0       3       0       0       0
+   774 ;;      Totals:         0       3       0       0       0
+   775 ;;Total ram usage:        3 bytes
+   776 ;; Hardware stack levels used:    1
+   777 ;; Hardware stack levels required when called:    3
+   778 ;; This function calls:
+   779 ;;		_SendChar_usart
+   780 ;;		_SendText_usart
+   781 ;;		_start_usart
+   782 ;; This function is called by:
+   783 ;;		_main
+   784 ;; This function uses a non-reentrant model
+   785 ;;
+   786                           
+   787                           
+   788                           ;psect for function _calandoUART
+   789  00DB                     _calandoUART:
+   790  00DB                     l976:	
+   791                           ;incstack = 0
+   792                           ; Regs used in _calandoUART: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   793                           
+   794                           
+   795                           ;main.c: 91:     start_usart();
+   796  00DB  120A  118A  2192  120A  118A  	fcall	_start_usart
+   797                           
+   798                           ;main.c: 92:     SendChar_usart('a');
+   799  00E0  3061               	movlw	97
+   800  00E1  120A  118A  21A3  120A  118A  	fcall	_SendChar_usart
+   801  00E6                     l978:
+   802                           
+   803                           ;main.c: 93:     _delay((unsigned long)((500)*(16000000/4000.0)));
+   804  00E6  300B               	movlw	11
+   805  00E7  1283               	bcf	3,5	;RP0=0, select bank0
+   806  00E8  1303               	bcf	3,6	;RP1=0, select bank0
+   807  00E9  00AA               	movwf	??_calandoUART+2
+   808  00EA  3026               	movlw	38
+   809  00EB  00A9               	movwf	??_calandoUART+1
+   810  00EC  305D               	movlw	93
+   811  00ED  00A8               	movwf	??_calandoUART
+   812  00EE                     u277:
+   813  00EE  0BA8               	decfsz	??_calandoUART,f
+   814  00EF  28EE               	goto	u277
+   815  00F0  0BA9               	decfsz	??_calandoUART+1,f
+   816  00F1  28EE               	goto	u277
+   817  00F2  0BAA               	decfsz	??_calandoUART+2,f
+   818  00F3  28EE               	goto	u277
+   819  00F4                     l980:
+   820                           
+   821                           ;main.c: 94:     SendText_usart("dfff");
+   822  00F4  300E               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+   823  00F5  120A  118A  20FB  120A  118A  	fcall	_SendText_usart
+   824  00FA                     l117:
+   825  00FA  0008               	return
+   826  00FB                     __end_of_calandoUART:
+   827                           
+   828                           	psect	text4
+   829  0192                     __ptext4:	
+   830 ;; *************** function _start_usart *****************
+   831 ;; Defined at:
+   832 ;;		line 20 in file "./USARTlib.h"
+   833 ;; Parameters:    Size  Location     Type
+   834 ;;		None
+   835 ;; Auto vars:     Size  Location     Type
+   836 ;;		None
+   837 ;; Return value:  Size  Location     Type
+   838 ;;                  1    wreg      void 
+   839 ;; Registers used:
+   840 ;;		wreg
+   841 ;; Tracked objects:
+   842 ;;		On entry : 0/0
+   843 ;;		On exit  : 0/0
+   844 ;;		Unchanged: 0/0
+   845 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   846 ;;      Params:         0       0       0       0       0
+   847 ;;      Locals:         0       0       0       0       0
+   848 ;;      Temps:          0       0       0       0       0
+   849 ;;      Totals:         0       0       0       0       0
+   850 ;;Total ram usage:        0 bytes
+   851 ;; Hardware stack levels used:    1
+   852 ;; Hardware stack levels required when called:    1
+   853 ;; This function calls:
+   854 ;;		Nothing
+   855 ;; This function is called by:
+   856 ;;		_calandoUART
+   857 ;; This function uses a non-reentrant model
+   858 ;;
+   859                           
+   860                           
+   861                           ;psect for function _start_usart
+   862  0192                     _start_usart:
+   863  0192                     l756:	
+   864                           ;incstack = 0
+   865                           ; Regs used in _start_usart: [wreg]
+   866                           
+   867                           
+   868                           ;./USARTlib.h: 22:      TRISC7=1;
+   869  0192  1683               	bsf	3,5	;RP0=1, select bank1
+   870  0193  1303               	bcf	3,6	;RP1=0, select bank1
+   871  0194  1787               	bsf	7,7	;volatile
+   872                           
+   873                           ;./USARTlib.h: 23:      TRISC6=0;
+   874  0195  1307               	bcf	7,6	;volatile
+   875  0196                     l758:
+   876                           
+   877                           ;./USARTlib.h: 24:      TXSTA=0b00100110;
+   878  0196  3026               	movlw	38
+   879  0197  0098               	movwf	24	;volatile
+   880                           
+   881                           ;./USARTlib.h: 25:      RCSTA=0b10010000;
+   882  0198  3090               	movlw	144
+   883  0199  1283               	bcf	3,5	;RP0=0, select bank0
+   884  019A  1303               	bcf	3,6	;RP1=0, select bank0
+   885  019B  0098               	movwf	24	;volatile
+   886                           
+   887                           ;./USARTlib.h: 26:      SPBRG=103;
+   888  019C  3067               	movlw	103
+   889  019D  1683               	bsf	3,5	;RP0=1, select bank1
+   890  019E  1303               	bcf	3,6	;RP1=0, select bank1
+   891  019F  0099               	movwf	25	;volatile
+   892                           
+   893                           ;./USARTlib.h: 27:      INTCON=0b11000000;
+   894  01A0  30C0               	movlw	192
+   895  01A1  008B               	movwf	11	;volatile
+   896  01A2                     l59:
+   897  01A2  0008               	return
+   898  01A3                     __end_of_start_usart:
+   899                           
+   900                           	psect	text5
+   901  008C                     __ptext5:	
+   902 ;; *************** function _HCSR04_GetDistance *****************
+   903 ;; Defined at:
+   904 ;;		line 55 in file "main.c"
+   905 ;; Parameters:    Size  Location     Type
+   906 ;;		None
+   907 ;; Auto vars:     Size  Location     Type
+   908 ;;  centimeters     2    5[COMMON] unsigned int 
+   909 ;; Return value:  Size  Location     Type
+   910 ;;                  2    2[COMMON] unsigned int 
+   911 ;; Registers used:
+   912 ;;		wreg, status,2
+   913 ;; Tracked objects:
+   914 ;;		On entry : 0/0
+   915 ;;		On exit  : 0/0
+   916 ;;		Unchanged: 0/0
+   917 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   918 ;;      Params:         2       0       0       0       0
+   919 ;;      Locals:         2       0       0       0       0
+   920 ;;      Temps:          1       0       0       0       0
+   921 ;;      Totals:         5       0       0       0       0
+   922 ;;Total ram usage:        5 bytes
+   923 ;; Hardware stack levels used:    1
+   924 ;; Hardware stack levels required when called:    1
+   925 ;; This function calls:
+   926 ;;		Nothing
+   927 ;; This function is called by:
+   928 ;;		_main
+   929 ;; This function uses a non-reentrant model
+   930 ;;
+   931                           
+   932                           
+   933                           ;psect for function _HCSR04_GetDistance
+   934  008C                     _HCSR04_GetDistance:
+   935  008C                     l894:	
+   936                           ;incstack = 0
+   937                           ; Regs used in _HCSR04_GetDistance: [wreg+status,2]
+   938                           
+   939                           
+   940                           ;main.c: 56:     unsigned int centimeters=0;
+   941  008C  01F5               	clrf	HCSR04_GetDistance@centimeters
+   942  008D  01F6               	clrf	HCSR04_GetDistance@centimeters+1
+   943  008E                     l896:
+   944                           
+   945                           ;main.c: 57:     RB6 = 1;
+   946  008E  1283               	bcf	3,5	;RP0=0, select bank0
+   947  008F  1303               	bcf	3,6	;RP1=0, select bank0
+   948  0090  1706               	bsf	6,6	;volatile
+   949  0091                     l898:
+   950                           
+   951                           ;main.c: 58:     _delay((unsigned long)((10)*(16000000/4000000.0)));
+   952  0091  300D               	movlw	13
+   953  0092  00F4               	movwf	??_HCSR04_GetDistance
+   954  0093                     u287:
+   955  0093  0BF4               	decfsz	??_HCSR04_GetDistance,f
+   956  0094  2893               	goto	u287
+   957  0095                     l900:
+   958                           
+   959                           ;main.c: 59:     RB6 = 0;
+   960  0095  1283               	bcf	3,5	;RP0=0, select bank0
+   961  0096  1303               	bcf	3,6	;RP1=0, select bank0
+   962  0097  1306               	bcf	6,6	;volatile
+   963  0098                     l902:
+   964                           
+   965                           ;main.c: 60:     RB0=0;
+   966  0098  1006               	bcf	6,0	;volatile
+   967  0099                     l100:	
+   968                           ;main.c: 61:     while(!RB7);
+   969                           
+   970  0099  1F86               	btfss	6,7	;volatile
+   971  009A  289C               	goto	u201
+   972  009B  289D               	goto	u200
+   973  009C                     u201:
+   974  009C  2899               	goto	l100
+   975  009D                     u200:
+   976  009D  28AB               	goto	l908
+   977  009E                     l904:
+   978                           
+   979                           ;main.c: 64:         centimeters++;
+   980  009E  3001               	movlw	1
+   981  009F  07F5               	addwf	HCSR04_GetDistance@centimeters,f
+   982  00A0  1803               	skipnc
+   983  00A1  0AF6               	incf	HCSR04_GetDistance@centimeters+1,f
+   984  00A2  3000               	movlw	0
+   985  00A3  07F6               	addwf	HCSR04_GetDistance@centimeters+1,f
+   986                           
+   987                           ;main.c: 65:         _delay((unsigned long)((58)*(16000000/4000000.0)));
+   988  00A4  304D               	movlw	77
+   989  00A5  00F4               	movwf	??_HCSR04_GetDistance
+   990  00A6                     u297:
+   991  00A6  0BF4               	decfsz	??_HCSR04_GetDistance,f
+   992  00A7  28A6               	goto	u297
+   993  00A8                     l906:
+   994                           
+   995                           ;main.c: 66:         RB0=1;
+   996  00A8  1283               	bcf	3,5	;RP0=0, select bank0
+   997  00A9  1303               	bcf	3,6	;RP1=0, select bank0
+   998  00AA  1406               	bsf	6,0	;volatile
+   999  00AB                     l908:
+  1000                           
+  1001                           ;main.c: 63:     while(RB7){
+  1002  00AB  1B86               	btfsc	6,7	;volatile
+  1003  00AC  28AE               	goto	u211
+  1004  00AD  28AF               	goto	u210
+  1005  00AE                     u211:
+  1006  00AE  289E               	goto	l904
+  1007  00AF                     u210:
+  1008  00AF                     l105:
+  1009                           
+  1010                           ;main.c: 68:     RB0=0;
+  1011  00AF  1006               	bcf	6,0	;volatile
+  1012  00B0                     l910:
+  1013                           
+  1014                           ;main.c: 69:     return(centimeters);
+  1015  00B0  0876               	movf	HCSR04_GetDistance@centimeters+1,w
+  1016  00B1  00F3               	movwf	?_HCSR04_GetDistance+1
+  1017  00B2  0875               	movf	HCSR04_GetDistance@centimeters,w
+  1018  00B3  00F2               	movwf	?_HCSR04_GetDistance
+  1019  00B4                     l106:
+  1020  00B4  0008               	return
+  1021  00B5                     __end_of_HCSR04_GetDistance:
+  1022                           
+  1023                           	psect	text6
+  1024  0150                     __ptext6:	
+  1025 ;; *************** function _Configure *****************
+  1026 ;; Defined at:
+  1027 ;;		line 130 in file "main.c"
+  1028 ;; Parameters:    Size  Location     Type
+  1029 ;;		None
+  1030 ;; Auto vars:     Size  Location     Type
+  1031 ;;		None
+  1032 ;; Return value:  Size  Location     Type
+  1033 ;;                  1    wreg      void 
+  1034 ;; Registers used:
+  1035 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1036 ;; Tracked objects:
+  1037 ;;		On entry : 0/0
+  1038 ;;		On exit  : 0/0
+  1039 ;;		Unchanged: 0/0
+  1040 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1041 ;;      Params:         0       0       0       0       0
+  1042 ;;      Locals:         0       0       0       0       0
+  1043 ;;      Temps:          0       0       0       0       0
+  1044 ;;      Totals:         0       0       0       0       0
+  1045 ;;Total ram usage:        0 bytes
+  1046 ;; Hardware stack levels used:    1
+  1047 ;; Hardware stack levels required when called:    3
+  1048 ;; This function calls:
+  1049 ;;		_ReadChar_usart
+  1050 ;;		_SendText_usart
+  1051 ;;		_changeConfigs
+  1052 ;; This function is called by:
+  1053 ;;		_main
+  1054 ;; This function uses a non-reentrant model
+  1055 ;;
+  1056                           
+  1057                           
+  1058                           ;psect for function _Configure
+  1059  0150                     _Configure:
+  1060  0150                     l930:	
+  1061                           ;incstack = 0
+  1062                           ; Regs used in _Configure: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1063                           
+  1064                           
+  1065                           ;main.c: 131:     if(ReadChar_usart()=='1'){
+  1066  0150  120A  118A  21BA  120A  118A  	fcall	_ReadChar_usart
+  1067  0155  3A31               	xorlw	49
+  1068  0156  1D03               	skipz
+  1069  0157  2959               	goto	u241
+  1070  0158  295A               	goto	u240
+  1071  0159                     u241:
+  1072  0159  2965               	goto	l138
+  1073  015A                     u240:
+  1074  015A                     l932:
+  1075                           
+  1076                           ;main.c: 132:         changeConfigs();
+  1077  015A  120A  118A  211A  120A  118A  	fcall	_changeConfigs
+  1078  015F                     l934:
+  1079                           
+  1080                           ;main.c: 133:         SendText_usart("save configs");
+  1081  015F  3001               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
+  1082  0160  120A  118A  20FB  120A  118A  	fcall	_SendText_usart
+  1083  0165                     l138:
+  1084  0165  0008               	return
+  1085  0166                     __end_of_Configure:
+  1086                           
+  1087                           	psect	text7
+  1088  011A                     __ptext7:	
+  1089 ;; *************** function _changeConfigs *****************
+  1090 ;; Defined at:
+  1091 ;;		line 123 in file "main.c"
+  1092 ;; Parameters:    Size  Location     Type
+  1093 ;;		None
+  1094 ;; Auto vars:     Size  Location     Type
+  1095 ;;		None
+  1096 ;; Return value:  Size  Location     Type
+  1097 ;;                  1    wreg      void 
+  1098 ;; Registers used:
+  1099 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+  1100 ;; Tracked objects:
+  1101 ;;		On entry : 0/0
+  1102 ;;		On exit  : 0/0
+  1103 ;;		Unchanged: 0/0
+  1104 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1105 ;;      Params:         0       0       0       0       0
+  1106 ;;      Locals:         0       0       0       0       0
+  1107 ;;      Temps:          1       0       0       0       0
+  1108 ;;      Totals:         1       0       0       0       0
+  1109 ;;Total ram usage:        1 bytes
+  1110 ;; Hardware stack levels used:    1
+  1111 ;; Hardware stack levels required when called:    2
+  1112 ;; This function calls:
+  1113 ;;		_configColor
+  1114 ;;		_configDistance
+  1115 ;;		_configTime
+  1116 ;; This function is called by:
+  1117 ;;		_Configure
+  1118 ;; This function uses a non-reentrant model
+  1119 ;;
+  1120                           
+  1121                           
+  1122                           ;psect for function _changeConfigs
+  1123  011A                     _changeConfigs:
+  1124  011A                     l890:	
+  1125                           ;incstack = 0
+  1126                           ; Regs used in _changeConfigs: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  1127                           
+  1128                           
+  1129                           ;main.c: 124:     configDistance(150);
+  1130  011A  3096               	movlw	150
+  1131  011B  00F2               	movwf	configDistance@distON
+  1132  011C  3000               	movlw	0
+  1133  011D  00F3               	movwf	configDistance@distON+1
+  1134  011E  120A  118A  217C  120A  118A  	fcall	_configDistance
+  1135                           
+  1136                           ;main.c: 125:     configTime(5);
+  1137  0123  3005               	movlw	5
+  1138  0124  00F2               	movwf	configTime@tiempoON
+  1139  0125  3000               	movlw	0
+  1140  0126  00F3               	movwf	configTime@tiempoON+1
+  1141  0127  120A  118A  2166  120A  118A  	fcall	_configTime
+  1142  012C                     l892:
+  1143                           
+  1144                           ;main.c: 126:     configColor(255,165,0);
+  1145  012C  30A5               	movlw	165
+  1146  012D  00F5               	movwf	??_changeConfigs
+  1147  012E  0875               	movf	??_changeConfigs,w
+  1148  012F  00F2               	movwf	configColor@G
+  1149  0130  01F3               	clrf	configColor@B
+  1150  0131  30FF               	movlw	255
+  1151  0132  120A  118A  21C4  120A  118A  	fcall	_configColor
+  1152  0137                     l134:
+  1153  0137  0008               	return
+  1154  0138                     __end_of_changeConfigs:
+  1155                           
+  1156                           	psect	text8
+  1157  0166                     __ptext8:	
+  1158 ;; *************** function _configTime *****************
+  1159 ;; Defined at:
+  1160 ;;		line 107 in file "main.c"
+  1161 ;; Parameters:    Size  Location     Type
+  1162 ;;  tiempoON        2    2[COMMON] unsigned int 
+  1163 ;; Auto vars:     Size  Location     Type
+  1164 ;;		None
+  1165 ;; Return value:  Size  Location     Type
+  1166 ;;                  1    wreg      void 
+  1167 ;; Registers used:
+  1168 ;;		wreg, status,2, status,0
+  1169 ;; Tracked objects:
+  1170 ;;		On entry : 0/0
+  1171 ;;		On exit  : 0/0
+  1172 ;;		Unchanged: 0/0
+  1173 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1174 ;;      Params:         2       0       0       0       0
+  1175 ;;      Locals:         0       0       0       0       0
+  1176 ;;      Temps:          0       0       0       0       0
+  1177 ;;      Totals:         2       0       0       0       0
+  1178 ;;Total ram usage:        2 bytes
+  1179 ;; Hardware stack levels used:    1
+  1180 ;; Hardware stack levels required when called:    1
+  1181 ;; This function calls:
+  1182 ;;		Nothing
+  1183 ;; This function is called by:
+  1184 ;;		_changeConfigs
+  1185 ;; This function uses a non-reentrant model
+  1186 ;;
+  1187                           
+  1188                           
+  1189                           ;psect for function _configTime
+  1190  0166                     _configTime:
+  1191  0166                     l872:	
+  1192                           ;incstack = 0
+  1193                           ; Regs used in _configTime: [wreg+status,2+status,0]
+  1194                           
+  1195                           
+  1196                           ;main.c: 108:     if(tiempoON>0&&tiempoON<=15){
+  1197  0166  0872               	movf	configTime@tiempoON,w
+  1198  0167  0473               	iorwf	configTime@tiempoON+1,w
+  1199  0168  1903               	btfsc	3,2
+  1200  0169  296B               	goto	u171
+  1201  016A  296C               	goto	u170
+  1202  016B                     u171:
+  1203  016B  297B               	goto	l127
+  1204  016C                     u170:
+  1205  016C                     l874:
+  1206  016C  3000               	movlw	0
+  1207  016D  0273               	subwf	configTime@tiempoON+1,w
+  1208  016E  3010               	movlw	16
+  1209  016F  1903               	skipnz
+  1210  0170  0272               	subwf	configTime@tiempoON,w
+  1211  0171  1803               	skipnc
+  1212  0172  2974               	goto	u181
+  1213  0173  2975               	goto	u180
+  1214  0174                     u181:
+  1215  0174  297B               	goto	l127
+  1216  0175                     u180:
+  1217  0175                     l876:
+  1218                           
+  1219                           ;main.c: 109:         timeON=tiempoON;
+  1220  0175  0873               	movf	configTime@tiempoON+1,w
+  1221  0176  1283               	bcf	3,5	;RP0=0, select bank0
+  1222  0177  1303               	bcf	3,6	;RP1=0, select bank0
+  1223  0178  00A5               	movwf	_timeON+1
+  1224  0179  0872               	movf	configTime@tiempoON,w
+  1225  017A  00A4               	movwf	_timeON
+  1226  017B                     l127:	
+  1227                           ;main.c: 110:     }else{
+  1228                           
+  1229  017B  0008               	return
+  1230  017C                     __end_of_configTime:
+  1231                           
+  1232                           	psect	text9
+  1233  017C                     __ptext9:	
+  1234 ;; *************** function _configDistance *****************
+  1235 ;; Defined at:
+  1236 ;;		line 98 in file "main.c"
+  1237 ;; Parameters:    Size  Location     Type
+  1238 ;;  distON          2    2[COMMON] unsigned int 
+  1239 ;; Auto vars:     Size  Location     Type
+  1240 ;;		None
+  1241 ;; Return value:  Size  Location     Type
+  1242 ;;                  1    wreg      void 
+  1243 ;; Registers used:
+  1244 ;;		wreg, status,2, status,0
+  1245 ;; Tracked objects:
+  1246 ;;		On entry : 0/0
+  1247 ;;		On exit  : 0/0
+  1248 ;;		Unchanged: 0/0
+  1249 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1250 ;;      Params:         2       0       0       0       0
+  1251 ;;      Locals:         0       0       0       0       0
+  1252 ;;      Temps:          0       0       0       0       0
+  1253 ;;      Totals:         2       0       0       0       0
+  1254 ;;Total ram usage:        2 bytes
+  1255 ;; Hardware stack levels used:    1
+  1256 ;; Hardware stack levels required when called:    1
+  1257 ;; This function calls:
+  1258 ;;		Nothing
+  1259 ;; This function is called by:
+  1260 ;;		_changeConfigs
+  1261 ;; This function uses a non-reentrant model
+  1262 ;;
+  1263                           
+  1264                           
+  1265                           ;psect for function _configDistance
+  1266  017C                     _configDistance:
+  1267  017C                     l866:	
+  1268                           ;incstack = 0
+  1269                           ; Regs used in _configDistance: [wreg+status,2+status,0]
+  1270                           
+  1271                           
+  1272                           ;main.c: 99:     if(distON>0&&distON<=400){
+  1273  017C  0872               	movf	configDistance@distON,w
+  1274  017D  0473               	iorwf	configDistance@distON+1,w
+  1275  017E  1903               	btfsc	3,2
+  1276  017F  2981               	goto	u151
+  1277  0180  2982               	goto	u150
+  1278  0181                     u151:
+  1279  0181  2991               	goto	l122
+  1280  0182                     u150:
+  1281  0182                     l868:
+  1282  0182  3001               	movlw	1
+  1283  0183  0273               	subwf	configDistance@distON+1,w
+  1284  0184  3091               	movlw	145
+  1285  0185  1903               	skipnz
+  1286  0186  0272               	subwf	configDistance@distON,w
+  1287  0187  1803               	skipnc
+  1288  0188  298A               	goto	u161
+  1289  0189  298B               	goto	u160
+  1290  018A                     u161:
+  1291  018A  2991               	goto	l122
+  1292  018B                     u160:
+  1293  018B                     l870:
+  1294                           
+  1295                           ;main.c: 100:         distanciaON=distON;
+  1296  018B  0873               	movf	configDistance@distON+1,w
+  1297  018C  1283               	bcf	3,5	;RP0=0, select bank0
+  1298  018D  1303               	bcf	3,6	;RP1=0, select bank0
+  1299  018E  00A7               	movwf	_distanciaON+1
+  1300  018F  0872               	movf	configDistance@distON,w
+  1301  0190  00A6               	movwf	_distanciaON
+  1302  0191                     l122:	
+  1303                           ;main.c: 101:     }else{
+  1304                           
+  1305  0191  0008               	return
+  1306  0192                     __end_of_configDistance:
+  1307                           
+  1308                           	psect	text10
+  1309  01C4                     __ptext10:	
+  1310 ;; *************** function _configColor *****************
+  1311 ;; Defined at:
+  1312 ;;		line 116 in file "main.c"
+  1313 ;; Parameters:    Size  Location     Type
+  1314 ;;  R               1    wreg     unsigned char 
+  1315 ;;  G               1    2[COMMON] unsigned char 
+  1316 ;;  B               1    3[COMMON] unsigned char 
+  1317 ;; Auto vars:     Size  Location     Type
+  1318 ;;  R               1    4[COMMON] unsigned char 
+  1319 ;; Return value:  Size  Location     Type
+  1320 ;;                  1    wreg      void 
+  1321 ;; Registers used:
+  1322 ;;		wreg, status,2, status,0, btemp+1
+  1323 ;; Tracked objects:
+  1324 ;;		On entry : 0/0
+  1325 ;;		On exit  : 0/0
+  1326 ;;		Unchanged: 0/0
+  1327 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1328 ;;      Params:         2       0       0       0       0
+  1329 ;;      Locals:         1       0       0       0       0
+  1330 ;;      Temps:          0       0       0       0       0
+  1331 ;;      Totals:         3       0       0       0       0
+  1332 ;;Total ram usage:        3 bytes
+  1333 ;; Hardware stack levels used:    1
+  1334 ;; Hardware stack levels required when called:    1
+  1335 ;; This function calls:
+  1336 ;;		Nothing
+  1337 ;; This function is called by:
+  1338 ;;		_changeConfigs
+  1339 ;; This function uses a non-reentrant model
+  1340 ;;
+  1341                           
+  1342                           
+  1343                           ;psect for function _configColor
+  1344  01C4                     _configColor:
+  1345  01C4                     l878:	
+  1346                           ;incstack = 0
+  1347                           ; Regs used in _configColor: [wreg+status,2+status,0+btemp+1]
+  1348                           
+  1349  01C4                     l131:
+  1350  01C4  0008               	return
+  1351  01C5                     __end_of_configColor:
+  1352                           
+  1353                           	psect	text11
+  1354  00FB                     __ptext11:	
+  1355 ;; *************** function _SendText_usart *****************
+  1356 ;; Defined at:
+  1357 ;;		line 53 in file "./USARTlib.h"
+  1358 ;; Parameters:    Size  Location     Type
+  1359 ;;  cadena          1    wreg     PTR unsigned char 
+  1360 ;;		 -> STR_2(13), STR_1(5), 
+  1361 ;; Auto vars:     Size  Location     Type
+  1362 ;;  cadena          1    4[COMMON] PTR unsigned char 
+  1363 ;;		 -> STR_2(13), STR_1(5), 
+  1364 ;; Return value:  Size  Location     Type
+  1365 ;;                  1    wreg      void 
+  1366 ;; Registers used:
+  1367 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1368 ;; Tracked objects:
+  1369 ;;		On entry : 0/0
+  1370 ;;		On exit  : 0/0
+  1371 ;;		Unchanged: 0/0
+  1372 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1373 ;;      Params:         0       0       0       0       0
+  1374 ;;      Locals:         1       0       0       0       0
+  1375 ;;      Temps:          1       0       0       0       0
+  1376 ;;      Totals:         2       0       0       0       0
+  1377 ;;Total ram usage:        2 bytes
+  1378 ;; Hardware stack levels used:    1
+  1379 ;; Hardware stack levels required when called:    2
+  1380 ;; This function calls:
+  1381 ;;		_SendChar_usart
+  1382 ;; This function is called by:
+  1383 ;;		_calandoUART
+  1384 ;;		_Configure
+  1385 ;; This function uses a non-reentrant model
+  1386 ;;
+  1387                           
+  1388                           
+  1389                           ;psect for function _SendText_usart
+  1390  00FB                     _SendText_usart:
+  1391                           
+  1392                           ;incstack = 0
+  1393                           ; Regs used in _SendText_usart: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1394                           ;SendText_usart@cadena stored from wreg
+  1395  00FB  00F4               	movwf	SendText_usart@cadena
+  1396  00FC                     l880:
+  1397                           
+  1398                           ;./USARTlib.h: 54:     while(*cadena !=0x00){
+  1399  00FC  290D               	goto	l886
+  1400  00FD                     l882:
+  1401                           
+  1402                           ;./USARTlib.h: 56:         SendChar_usart(*cadena);
+  1403  00FD  0874               	movf	SendText_usart@cadena,w
+  1404  00FE  0084               	movwf	4
+  1405  00FF  120A  118A  2138  120A  118A  	fcall	stringdir
+  1406  0104  120A  118A  21A3  120A  118A  	fcall	_SendChar_usart
+  1407  0109                     l884:
+  1408                           
+  1409                           ;./USARTlib.h: 57:         cadena++;
+  1410  0109  3001               	movlw	1
+  1411  010A  00F3               	movwf	??_SendText_usart
+  1412  010B  0873               	movf	??_SendText_usart,w
+  1413  010C  07F4               	addwf	SendText_usart@cadena,f
+  1414  010D                     l886:
+  1415                           
+  1416                           ;./USARTlib.h: 54:     while(*cadena !=0x00){
+  1417  010D  0874               	movf	SendText_usart@cadena,w
+  1418  010E  0084               	movwf	4
+  1419  010F  120A  118A  2138  120A  118A  	fcall	stringdir
+  1420  0114  3A00               	xorlw	0
+  1421  0115  1D03               	skipz
+  1422  0116  2918               	goto	u191
+  1423  0117  2919               	goto	u190
+  1424  0118                     u191:
+  1425  0118  28FD               	goto	l882
+  1426  0119                     u190:
+  1427  0119                     l75:
+  1428  0119  0008               	return
+  1429  011A                     __end_of_SendText_usart:
+  1430                           
+  1431                           	psect	text12
+  1432  01A3                     __ptext12:	
+  1433 ;; *************** function _SendChar_usart *****************
+  1434 ;; Defined at:
+  1435 ;;		line 44 in file "./USARTlib.h"
+  1436 ;; Parameters:    Size  Location     Type
+  1437 ;;  caracter        1    wreg     unsigned char 
+  1438 ;; Auto vars:     Size  Location     Type
+  1439 ;;  caracter        1    2[COMMON] unsigned char 
+  1440 ;; Return value:  Size  Location     Type
+  1441 ;;                  1    wreg      void 
+  1442 ;; Registers used:
+  1443 ;;		wreg
+  1444 ;; Tracked objects:
+  1445 ;;		On entry : 0/0
+  1446 ;;		On exit  : 0/0
+  1447 ;;		Unchanged: 0/0
+  1448 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1449 ;;      Params:         0       0       0       0       0
+  1450 ;;      Locals:         1       0       0       0       0
+  1451 ;;      Temps:          0       0       0       0       0
+  1452 ;;      Totals:         1       0       0       0       0
+  1453 ;;Total ram usage:        1 bytes
+  1454 ;; Hardware stack levels used:    1
+  1455 ;; Hardware stack levels required when called:    1
+  1456 ;; This function calls:
+  1457 ;;		Nothing
+  1458 ;; This function is called by:
+  1459 ;;		_SendText_usart
+  1460 ;;		_calandoUART
+  1461 ;; This function uses a non-reentrant model
+  1462 ;;
+  1463                           
+  1464                           
+  1465                           ;psect for function _SendChar_usart
+  1466  01A3                     _SendChar_usart:
+  1467                           
+  1468                           ;incstack = 0
+  1469                           ; Regs used in _SendChar_usart: [wreg]
+  1470                           ;SendChar_usart@caracter stored from wreg
+  1471  01A3  00F2               	movwf	SendChar_usart@caracter
+  1472  01A4                     l738:
+  1473  01A4                     l66:	
+  1474                           ;./USARTlib.h: 45:     while(TRMT==0);
+  1475                           
+  1476  01A4  1683               	bsf	3,5	;RP0=1, select bank1
+  1477  01A5  1303               	bcf	3,6	;RP1=0, select bank1
+  1478  01A6  1C98               	btfss	24,1	;volatile
+  1479  01A7  29A9               	goto	u11
+  1480  01A8  29AA               	goto	u10
+  1481  01A9                     u11:
+  1482  01A9  29A4               	goto	l66
+  1483  01AA                     u10:
+  1484  01AA                     l740:
+  1485                           
+  1486                           ;./USARTlib.h: 46:  TXREG = caracter;
+  1487  01AA  0872               	movf	SendChar_usart@caracter,w
+  1488  01AB  1283               	bcf	3,5	;RP0=0, select bank0
+  1489  01AC  1303               	bcf	3,6	;RP1=0, select bank0
+  1490  01AD  0099               	movwf	25	;volatile
+  1491  01AE                     l69:
+  1492  01AE  0008               	return
+  1493  01AF                     __end_of_SendChar_usart:
+  1494                           
+  1495                           	psect	text13
+  1496  01BA                     __ptext13:	
+  1497 ;; *************** function _ReadChar_usart *****************
+  1498 ;; Defined at:
+  1499 ;;		line 33 in file "./USARTlib.h"
+  1500 ;; Parameters:    Size  Location     Type
+  1501 ;;		None
+  1502 ;; Auto vars:     Size  Location     Type
+  1503 ;;		None
+  1504 ;; Return value:  Size  Location     Type
+  1505 ;;                  1    wreg      unsigned char 
+  1506 ;; Registers used:
+  1507 ;;		wreg
+  1508 ;; Tracked objects:
+  1509 ;;		On entry : 0/0
+  1510 ;;		On exit  : 0/0
+  1511 ;;		Unchanged: 0/0
+  1512 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1513 ;;      Params:         0       0       0       0       0
+  1514 ;;      Locals:         0       0       0       0       0
+  1515 ;;      Temps:          0       0       0       0       0
+  1516 ;;      Totals:         0       0       0       0       0
+  1517 ;;Total ram usage:        0 bytes
+  1518 ;; Hardware stack levels used:    1
+  1519 ;; Hardware stack levels required when called:    1
+  1520 ;; This function calls:
+  1521 ;;		Nothing
+  1522 ;; This function is called by:
+  1523 ;;		_Configure
+  1524 ;; This function uses a non-reentrant model
+  1525 ;;
+  1526                           
+  1527                           
+  1528                           ;psect for function _ReadChar_usart
+  1529  01BA                     _ReadChar_usart:
+  1530  01BA                     l760:	
+  1531                           ;incstack = 0
+  1532                           ; Regs used in _ReadChar_usart: [wreg]
+  1533                           
+  1534                           
+  1535                           ;./USARTlib.h: 34:     if(RCIF==1){
+  1536  01BA  1283               	bcf	3,5	;RP0=0, select bank0
+  1537  01BB  1303               	bcf	3,6	;RP1=0, select bank0
+  1538  01BC  1E8C               	btfss	12,5	;volatile
+  1539  01BD  29BF               	goto	u61
+  1540  01BE  29C0               	goto	u60
+  1541  01BF                     u61:
+  1542  01BF  29C2               	goto	l766
+  1543  01C0                     u60:
+  1544  01C0                     l762:
+  1545                           
+  1546                           ;./USARTlib.h: 35:     return RCREG;
+  1547  01C0  081A               	movf	26,w	;volatile
+  1548  01C1  29C3               	goto	l63
+  1549  01C2                     l766:
+  1550                           
+  1551                           ;./USARTlib.h: 38:         return 0;
+  1552  01C2  3000               	movlw	0
+  1553  01C3                     l63:
+  1554  01C3  0008               	return
+  1555  01C4                     __end_of_ReadChar_usart:
+  1556                           
+  1557                           	psect	text14
+  1558  0022                     __ptext14:	
+  1559 ;; *************** function _inter *****************
+  1560 ;; Defined at:
+  1561 ;;		line 41 in file "main.c"
+  1562 ;; Parameters:    Size  Location     Type
+  1563 ;;		None
+  1564 ;; Auto vars:     Size  Location     Type
+  1565 ;;		None
+  1566 ;; Return value:  Size  Location     Type
+  1567 ;;                  1    wreg      void 
+  1568 ;; Registers used:
+  1569 ;;		wreg, status,2, status,0
+  1570 ;; Tracked objects:
+  1571 ;;		On entry : 0/0
+  1572 ;;		On exit  : 0/0
+  1573 ;;		Unchanged: 0/0
+  1574 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1575 ;;      Params:         0       0       0       0       0
+  1576 ;;      Locals:         0       0       0       0       0
+  1577 ;;      Temps:          2       0       0       0       0
+  1578 ;;      Totals:         2       0       0       0       0
+  1579 ;;Total ram usage:        2 bytes
+  1580 ;; Hardware stack levels used:    1
+  1581 ;; This function calls:
+  1582 ;;		Nothing
+  1583 ;; This function is called by:
+  1584 ;;		Interrupt level 1
+  1585 ;; This function uses a non-reentrant model
+  1586 ;;
+  1587                           
+  1588                           
+  1589                           ;psect for function _inter
+  1590  0022                     _inter:
+  1591  0022                     i1l936:
+  1592                           
+  1593                           ;main.c: 42:     if(TMR0IF){
+  1594  0022  1D0B               	btfss	11,2	;volatile
+  1595  0023  2825               	goto	u25_21
+  1596  0024  2826               	goto	u25_20
+  1597  0025                     u25_21:
+  1598  0025  2854               	goto	i1l97
+  1599  0026                     u25_20:
+  1600  0026                     i1l938:
+  1601                           
+  1602                           ;main.c: 43:         cnt++;
+  1603  0026  3001               	movlw	1
+  1604  0027  1283               	bcf	3,5	;RP0=0, select bank0
+  1605  0028  1303               	bcf	3,6	;RP1=0, select bank0
+  1606  0029  07A0               	addwf	_cnt,f
+  1607  002A  3000               	movlw	0
+  1608  002B  1803               	skipnc
+  1609  002C  3001               	movlw	1
+  1610  002D  07A1               	addwf	_cnt+1,f
+  1611  002E  3000               	movlw	0
+  1612  002F  1803               	skipnc
+  1613  0030  3001               	movlw	1
+  1614  0031  07A2               	addwf	_cnt+2,f
+  1615  0032  3000               	movlw	0
+  1616  0033  1803               	skipnc
+  1617  0034  3001               	movlw	1
+  1618  0035  07A3               	addwf	_cnt+3,f
+  1619  0036                     i1l940:
+  1620                           
+  1621                           ;main.c: 44:         TMR0IF = 0;
+  1622  0036  110B               	bcf	11,2	;volatile
+  1623                           
+  1624                           ;main.c: 45:         TMR0 = 6;
+  1625  0037  3006               	movlw	6
+  1626  0038  0081               	movwf	1	;volatile
+  1627  0039                     i1l942:
+  1628                           
+  1629                           ;main.c: 46:         if(cnt == 2000){
+  1630  0039  30D0               	movlw	208
+  1631  003A  0620               	xorwf	_cnt,w
+  1632  003B  3007               	movlw	7
+  1633  003C  1903               	skipnz
+  1634  003D  0621               	xorwf	_cnt+1,w
+  1635  003E  0422               	iorwf	_cnt+2,w
+  1636  003F  0423               	iorwf	_cnt+3,w
+  1637  0040  1D03               	btfss	3,2
+  1638  0041  2843               	goto	u26_21
+  1639  0042  2844               	goto	u26_20
+  1640  0043                     u26_21:
+  1641  0043  2854               	goto	i1l97
+  1642  0044                     u26_20:
+  1643  0044                     i1l944:
+  1644                           
+  1645                           ;main.c: 47:             cnt = 0;
+  1646  0044  3000               	movlw	0
+  1647  0045  1283               	bcf	3,5	;RP0=0, select bank0
+  1648  0046  1303               	bcf	3,6	;RP1=0, select bank0
+  1649  0047  00A3               	movwf	_cnt+3
+  1650  0048  3000               	movlw	0
+  1651  0049  00A2               	movwf	_cnt+2
+  1652  004A  3000               	movlw	0
+  1653  004B  00A1               	movwf	_cnt+1
+  1654  004C  3000               	movlw	0
+  1655  004D  00A0               	movwf	_cnt
+  1656                           
+  1657                           ;main.c: 48:             cntSeg++;
+  1658  004E  3001               	movlw	1
+  1659  004F  07F9               	addwf	_cntSeg,f
+  1660  0050  1803               	skipnc
+  1661  0051  0AFA               	incf	_cntSeg+1,f
+  1662  0052  3000               	movlw	0
+  1663  0053  07FA               	addwf	_cntSeg+1,f
+  1664  0054                     i1l97:
+  1665  0054  0871               	movf	??_inter+1,w
+  1666  0055  008A               	movwf	10
+  1667  0056  0E70               	swapf	??_inter,w
+  1668  0057  0083               	movwf	3
+  1669  0058  0EFE               	swapf	btemp,f
+  1670  0059  0E7E               	swapf	btemp,w
+  1671  005A  0009               	retfie
+  1672  005B                     __end_of_inter:
+  1673  007E                     btemp	set	126	;btemp
+  1674  007E                     wtemp0	set	126
+  1675                           
+  1676                           	psect	intentry
+  1677  0004                     __pintentry:	
+  1678                           ;incstack = 0
+  1679                           ; Regs used in _inter: [wreg+status,2+status,0]
+  1680                           
+  1681  0004                     interrupt_function:
+  1682  007E                     saved_w	set	btemp
+  1683  0004  00FE               	movwf	btemp
+  1684  0005  0E03               	swapf	3,w
+  1685  0006  00F0               	movwf	??_inter
+  1686  0007  080A               	movf	10,w
+  1687  0008  00F1               	movwf	??_inter+1
+  1688  0009  120A  118A  2822   	ljmp	_inter
+  1689                           
+  1690                           	psect	config
+  1691                           
+  1692                           ;Config register CONFIG1 @ 0x2007
+  1693                           ;	Oscillator Selection bits
+  1694                           ;	FOSC = HS, HS oscillator: High-speed crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1
+      +                          /CLKIN
+  1695                           ;	Watchdog Timer Enable bit
+  1696                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1697                           ;	Power-up Timer Enable bit
+  1698                           ;	PWRTE = OFF, PWRT disabled
+  1699                           ;	RE3/MCLR pin function select bit
+  1700                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
+  1701                           ;	Code Protection bit
+  1702                           ;	CP = OFF, Program memory code protection is disabled
+  1703                           ;	Data Code Protection bit
+  1704                           ;	CPD = OFF, Data memory code protection is disabled
+  1705                           ;	Brown Out Reset Selection bits
+  1706                           ;	BOREN = ON, BOR enabled
+  1707                           ;	Internal External Switchover bit
+  1708                           ;	IESO = ON, Internal/External Switchover mode is enabled
+  1709                           ;	Fail-Safe Clock Monitor Enabled bit
+  1710                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
+  1711                           ;	Low Voltage Programming Enable bit
+  1712                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1713                           ;	In-Circuit Debugger Mode bit
+  1714                           ;	DEBUG = 0x1, unprogrammed default
+  1715  2007                     	org	8199
+  1716  2007  2FF2               	dw	12274
+  1717                           
+  1718                           ;Config register CONFIG2 @ 0x2008
+  1719                           ;	Brown-out Reset Selection bit
+  1720                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1721                           ;	Flash Program Memory Self Write Enable bits
+  1722                           ;	WRT = OFF, Write protection off
+  1723  2008                     	org	8200
+  1724  2008  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     18
+    Constant    0
+    Data        0
+    BSS         13
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      7      12
+    BANK0            80      3      11
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    SendText_usart@cadena	PTR unsigned char  size(1) Largest target is 13
+		 -> STR_2(CODE[13]), STR_1(CODE[5]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_HCSR04_GetDistance
+    _calandoUART->_SendText_usart
+    _Configure->_changeConfigs
+    _changeConfigs->_configColor
+    _SendText_usart->_SendChar_usart
+
+Critical Paths under _inter in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_calandoUART
+
+Critical Paths under _inter in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _inter in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _inter in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _inter in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     793
+                          _Configure
+                 _HCSR04_GetDistance
+                        _calandoUART
+                             _prende
+ ---------------------------------------------------------------------------------
+ (1) _prende                                               0     0      0       0
+                           _initTMR0
+ ---------------------------------------------------------------------------------
+ (2) _initTMR0                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _calandoUART                                          3     3      0     141
+                                              0 BANK0      3     3      0
+                     _SendChar_usart
+                     _SendText_usart
+                        _start_usart
+ ---------------------------------------------------------------------------------
+ (2) _start_usart                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _HCSR04_GetDistance                                   5     3      2      24
+                                              2 COMMON     5     3      2
+ ---------------------------------------------------------------------------------
+ (1) _Configure                                            0     0      0     628
+                     _ReadChar_usart
+                     _SendText_usart
+                      _changeConfigs
+ ---------------------------------------------------------------------------------
+ (2) _changeConfigs                                        1     1      0     502
+                                              5 COMMON     1     1      0
+                        _configColor
+                     _configDistance
+                         _configTime
+ ---------------------------------------------------------------------------------
+ (3) _configTime                                           2     0      2     142
+                                              2 COMMON     2     0      2
+ ---------------------------------------------------------------------------------
+ (3) _configDistance                                       2     0      2     142
+                                              2 COMMON     2     0      2
+ ---------------------------------------------------------------------------------
+ (3) _configColor                                          3     1      2     218
+                                              2 COMMON     3     1      2
+ ---------------------------------------------------------------------------------
+ (2) _SendText_usart                                       2     2      0     126
+                                              3 COMMON     2     2      0
+                     _SendChar_usart
+ ---------------------------------------------------------------------------------
+ (3) _SendChar_usart                                       1     1      0      15
+                                              2 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _ReadChar_usart                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _inter                                                2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Configure
+     _ReadChar_usart
+     _SendText_usart
+       _SendChar_usart
+     _changeConfigs
+       _configColor
+       _configDistance
+       _configTime
+   _HCSR04_GetDistance
+   _calandoUART
+     _SendChar_usart
+     _SendText_usart
+       _SendChar_usart
+     _start_usart
+   _prende
+     _initTMR0
+
+ _inter (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      7       C       1       85.7%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      17       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      3       B       5       13.8%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      17      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.30 build 20200825195618 
+Symbol Table                                                                                   Tue Oct 13 06:00:26 2020
+
+                            pc 0002             configTime@tiempoON 0072                             l63 01C3  
+                           l66 01A4                             l90 01B9                             l75 0119  
+                           l59 01A2                             l69 01AE                             u10 01AA  
+                           u11 01A9                             u60 01C0                             u61 01BF  
+                           fsr 0004                            l100 0099                            l111 00C7  
+                          l105 00AF                            l113 00D9                            l122 0191  
+                          l106 00B4                            l114 00DA                            l131 01C4  
+                          l117 00FA                            l109 00D8                            l134 0137  
+                          l127 017B                            l138 0165                            l740 01AA  
+                          l900 0095                            l910 00B0                            l902 0098  
+                          l760 01BA                            l904 009E                            l920 00D4  
+                          l762 01C0                            l738 01A4                            l930 0150  
+                          l906 00A8                            l922 00D6                            l914 00B5  
+                          l932 015A                            l908 00AB                            l756 0192  
+                          l916 00C1                            l766 01C2                            l870 018B  
+                          l934 015F                            l758 0196                            l918 00C8  
+                          l880 00FC                            l872 0166                            l882 00FD  
+                          l866 017C                            l874 016C                            l890 011A  
+                          l884 0109                            l868 0182                            l876 0175  
+                          l892 012C                            l980 00F4                            l886 010D  
+                          l878 01C4                            l894 008C                            l990 0064  
+                          l982 005B                            l896 008E                            l976 00DB  
+                          l888 01AF                            l992 0065                            l984 005F  
+                          l898 0091                            l978 00E6                            l994 0066  
+                          l986 0062                            l996 0067                            l988 0063  
+                          l998 0068                            _RB0 0030                            _RB1 0031  
+                          _RB3 0033                            _RB6 0036                            _RB7 0037  
+                          u200 009D                            u201 009C                            u210 00AF  
+                          u211 00AE                            u220 00C1                            u221 00C0  
+                          u150 0182                            u230 00D4                            u151 0181  
+                          u231 00D3                            u160 018B                            u240 015A  
+                          u161 018A                            u241 0159                            u225 00BD  
+                          u170 016C                            u171 016B                            u235 00D0  
+                          u180 0175                            u181 0174                            u190 0119  
+                          u191 0118                            u277 00EE                            u287 0093  
+                          u297 00A6                            _cnt 0020          __end_of_changeConfigs 0138  
+                          fsr0 0004                    _start_usart 0192                   configColor@B 0073  
+                 configColor@G 0072                   configColor@R 0074                           l1000 006A  
+                         l1010 0083                           l1002 006F                           l1004 0078  
+                         l1006 007B                           l1008 0080                           STR_1 014B  
+                         STR_2 013E                           _T0IE 005D           configDistance@distON 0072  
+                         _PIE1 008C                           _RCIF 0065                           i1l97 0054  
+                         _TMR0 0001               ??_SendChar_usart 0072                           _TRMT 04C1  
+                         _main 005B                           btemp 007E                           start 000C  
+         __size_of_calandoUART 0020                          ?_main 0070                          _ANSEL 0188  
+                        i1l940 0036                          i1l942 0039                          i1l944 0044  
+                        i1l936 0022                          i1l938 0026                          _RCREG 001A  
+                        _RCSTA 0018                          u25_20 0026                          u25_21 0025  
+                        u26_20 0044                          u26_21 0043                          _SPBRG 0099  
+               _ReadChar_usart 01BA                          _TXREG 0019                          _TXSTA 0098  
+                        _inter 0022  HCSR04_GetDistance@centimeters 0075                          pclath 000A  
+                        status 0003                          wtemp0 007E                __initialization 000F  
+                 __end_of_main 008C         __end_of_ReadChar_usart 01C4                         ??_main 0077  
+           __size_of_Configure 0016                         ?_inter 0070                         _ANSELH 0189  
+             ??_configDistance 0074                         _INTCON 000B                         _TMR0IF 005A  
+                       _TRISB0 0430                         _TRISB1 0431                         _TRISB3 0433  
+                       _TRISB6 0436                         _TRISB7 0437                         _TRISC6 043E  
+                       _TRISC7 043F           __size_of_configColor 0001               __end_of_initTMR0 01BA  
+                       _cntSeg 0079                         _timeON 0024                         _prende 00B5  
+              ?_ReadChar_usart 0070               ??_SendText_usart 0073                         saved_w 007E  
+      __end_of__initialization 001E                 __pcstackCOMMON 0070              __end_of_Configure 0166  
+                __end_of_inter 005B                   ?_start_usart 0070     __end_of_HCSR04_GetDistance 00B5  
+                      ??_inter 0070                     __pbssBANK0 0020                     __pmaintext 005B  
+                   __pintentry 0004                        ?_prende 0070                     _configTime 0166  
+                   __stringtab 0138                      ?_initTMR0 0070                  ??_calandoUART 0028  
+       __size_of_changeConfigs 001E           SendText_usart@cadena 0074                        __ptext1 00B5  
+                      __ptext2 01AF                        __ptext3 00DB                        __ptext4 0192  
+                      __ptext5 008C                        __ptext6 0150                        __ptext7 011A  
+                      __ptext8 0166                        __ptext9 017C                __size_of_prende 0026  
+         end_of_initialization 001E                     ??_initTMR0 0072         SendChar_usart@caracter 0072  
+             ??_ReadChar_usart 0072        __size_of_SendChar_usart 000C            __end_of_calandoUART 00FB  
+                  ?_configTime 0072                  _changeConfigs 011A           __size_of_start_usart 0011  
+                ??_configColor 0074                      _Configure 0150                 __end_of_prende 00DB  
+               ?_changeConfigs 0070            start_initialization 000F                    _calandoUART 00DB  
+           _HCSR04_GetDistance 008C            __size_of_configTime 0016        __size_of_configDistance 0016  
+          __end_of_configColor 01C5            ?_HCSR04_GetDistance 0072                     ?_Configure 0070  
+                     ??_prende 0072                    __pbssCOMMON 0077                      ___latbits 0002  
+                __pcstackBANK0 0028           ??_HCSR04_GetDistance 0074        __size_of_SendText_usart 001F  
+            __size_of_initTMR0 000B                 _SendChar_usart 01A3                      __pstrings 0138  
+                    _distancia 0077                ??_changeConfigs 0075                 __size_of_inter 0039  
+            interrupt_function 0004                    _configColor 01C4         __end_of_SendChar_usart 01AF  
+                  _distanciaON 0026                    ??_Configure 0076                      _tmrStatus 007B  
+                  __stringbase 013D                   ??_configTime 0074                ?_SendChar_usart 0070  
+               _configDistance 017C             __end_of_configTime 017C             __end_of__stringtab 013E  
+                ??_start_usart 0072                       __ptext10 01C4                       __ptext11 00FB  
+                     __ptext12 01A3                       __ptext13 01BA                       __ptext14 0022  
+                     _initTMR0 01AF                 _SendText_usart 00FB                  __size_of_main 0031  
+       __end_of_configDistance 0192                   ?_calandoUART 0070        __size_of_ReadChar_usart 000A  
+       __end_of_SendText_usart 011A            __end_of_start_usart 01A3                       intlevel1 0000  
+              ?_configDistance 0072                      stringcode 0138                     _OPTION_REG 0081  
+                     stringdir 0138                       stringtab 0138                ?_SendText_usart 0070  
+  __size_of_HCSR04_GetDistance 0029                   ?_configColor 0072  
