@@ -1,0 +1,490 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"505 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\memset.c
+[v _memset memset `(*.4v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"9 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\configtmrs.c
+[v _TMR0_Init TMR0_Init `(v  1 e 1 0 ]
+"14
+[v _TMR0_Cnf TMR0_Cnf `(v  1 e 1 0 ]
+"20
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
+"26
+[v _TMR2_Cnf TMR2_Cnf `(v  1 e 1 0 ]
+"32
+[v _TMR2_Stop TMR2_Stop `(v  1 e 1 0 ]
+"14 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\eepromlib.c
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
+"23
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+"36
+[v _EEPROM_Save EEPROM_Save `(v  1 e 1 0 ]
+"65 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _PIC_Init PIC_Init `(v  1 e 1 0 ]
+"80
+[v _MCU_Init MCU_Init `(v  1 e 1 0 ]
+"85
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+"97
+[v _pulsos pulsos `II(v  1 e 1 0 ]
+"143
+[v _loop loop `(v  1 e 1 0 ]
+"158
+[v _Color_Start Color_Start `(v  1 e 1 0 ]
+"177
+[v _CNF_Distance CNF_Distance `(v  1 e 1 0 ]
+"186
+[v _CNF_Time CNF_Time `(v  1 e 1 0 ]
+"195
+[v _CNF_Color CNF_Color `(v  1 e 1 0 ]
+"212
+[v _CNF_Default CNF_Default `(v  1 e 1 0 ]
+"229
+[v _CNF_Load CNF_Load `(v  1 e 1 0 ]
+"255
+[v _main main `(v  1 e 1 0 ]
+"10 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\usartlib.c
+[v _USART_Init USART_Init `(v  1 e 1 0 ]
+"26
+[v _USART_ReadChar USART_ReadChar `(uc  1 e 1 0 ]
+"55
+[v _USART_SendChar USART_SendChar `(v  1 e 1 0 ]
+"64
+[v _USART_SendText USART_SendText `(v  1 e 1 0 ]
+"59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S121 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245
+[u S130 . 1 `S121 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES130  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S148 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S157 . 1 `S148 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES157  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S67 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S76 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S81 . 1 `S67 1 . 1 0 `S76 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES81  1 e 1 @11 ]
+"537
+[v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
+[s S100 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S108 . 1 `S100 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES108  1 e 1 @12 ]
+"765
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"772
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"927
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"941
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1038
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1154
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1168
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S329 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1557
+[u S338 . 1 `S329 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES338  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1702
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+[s S33 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S39 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S44 . 1 `S33 1 . 1 0 `S39 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES44  1 e 1 @143 ]
+"2041
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2556
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3250
+[v _EEDAT EEDAT `VEuc  1 e 1 @268 ]
+"3257
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+[s S408 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"3514
+[u S415 . 1 `S408 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES415  1 e 1 @396 ]
+"3544
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"3836
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"4358
+[v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
+"4361
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"4379
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"4382
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"4508
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"358 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"12 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\eepromlib.c
+[v _dato dato `uc  1 e 1 0 ]
+"30 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _msj_cnf_param msj_cnf_param `[35]uc  1 e 35 0 ]
+"32
+[v _msj_packet msj_packet `[35]uc  1 e 35 0 ]
+"35
+[v _cnt_Seg cnt_Seg `uc  1 e 1 0 ]
+"36
+[v _distance distance `ui  1 e 2 0 ]
+"37
+[v _distance_to_ON distance_to_ON `ui  1 e 2 0 ]
+"38
+[v _time_ON time_ON `ui  1 e 2 0 ]
+"42
+[v _cnt cnt `uc  1 e 1 0 ]
+"43
+[v _Qr Qr `uc  1 e 1 0 ]
+"44
+[v _Qg Qg `uc  1 e 1 0 ]
+"45
+[v _Qb Qb `uc  1 e 1 0 ]
+"46
+[v _Qt Qt `uc  1 e 1 0 ]
+"47
+[v _Qd Qd `uc  1 e 1 0 ]
+"48
+[v _cnt_Deathline cnt_Deathline `uc  1 e 1 0 ]
+"49
+[v _i i `uc  1 e 1 0 ]
+"50
+[v _cuenta cuenta `uc  1 e 1 0 ]
+"52
+[v _flag_rx flag_rx `uc  1 e 1 0 ]
+"53
+[v _START START `b  1 e 0 0 ]
+"56
+[v _lectura lectura `uc  1 e 1 0 ]
+"8 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\usartlib.c
+[v _BAUDIOS BAUDIOS `ui  1 e 2 0 ]
+"255 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"301
+} 0
+"505 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 30 ]
+"512
+[v sprintf@c c `uc  1 a 1 34 ]
+"521
+[v sprintf@prec prec `c  1 a 1 32 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 29 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 28 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 12 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 33 ]
+"1567
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 11 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 7 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 9 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 4 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\memset.c
+[v _memset memset `(*.4v  1 e 1 0 ]
+{
+[v memset@p1 p1 `*.4v  1 a 1 wreg ]
+"15
+[v memset@p p `*.4uc  1 a 1 4 ]
+"8
+[v memset@p1 p1 `*.4v  1 a 1 wreg ]
+[v memset@c c `i  1 p 2 0 ]
+[v memset@n n `ui  1 p 2 2 ]
+"18
+[v memset@p1 p1 `*.4v  1 a 1 5 ]
+"22
+} 0
+"64 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\usartlib.c
+[v _USART_SendText USART_SendText `(v  1 e 1 0 ]
+{
+[v USART_SendText@cadena cadena `*.26uc  1 p 2 1 ]
+"71
+} 0
+"55
+[v _USART_SendChar USART_SendChar `(v  1 e 1 0 ]
+{
+[v USART_SendChar@caracter caracter `uc  1 a 1 wreg ]
+[v USART_SendChar@caracter caracter `uc  1 a 1 wreg ]
+[v USART_SendChar@caracter caracter `uc  1 a 1 0 ]
+"58
+} 0
+"10
+[v _USART_Init USART_Init `(v  1 e 1 0 ]
+{
+[v USART_Init@XTAL XTAL `DCl  1 p 4 15 ]
+[v USART_Init@baudrate baudrate `l  1 p 4 19 ]
+"21
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 11 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 10 ]
+[v ___aldiv@counter counter `uc  1 a 1 9 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"80 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _MCU_Init MCU_Init `(v  1 e 1 0 ]
+{
+"83
+} 0
+"65
+[v _PIC_Init PIC_Init `(v  1 e 1 0 ]
+{
+"78
+} 0
+"158
+[v _Color_Start Color_Start `(v  1 e 1 0 ]
+{
+"161
+} 0
+"143
+[v _loop loop `(v  1 e 1 0 ]
+{
+"156
+} 0
+"85
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+{
+"94
+} 0
+"26 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\configtmrs.c
+[v _TMR2_Cnf TMR2_Cnf `(v  1 e 1 0 ]
+{
+"30
+} 0
+"229 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _CNF_Load CNF_Load `(v  1 e 1 0 ]
+{
+"243
+} 0
+"14 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\eepromlib.c
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
+{
+[v EEPROM_Read@address address `uc  1 a 1 wreg ]
+[v EEPROM_Read@address address `uc  1 a 1 wreg ]
+[v EEPROM_Read@address address `uc  1 a 1 2 ]
+"21
+} 0
+"212 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _CNF_Default CNF_Default `(v  1 e 1 0 ]
+{
+"226
+} 0
+"36 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\eepromlib.c
+[v _EEPROM_Save EEPROM_Save `(v  1 e 1 0 ]
+{
+[v EEPROM_Save@i i `uc  1 a 1 wreg ]
+[v EEPROM_Save@i i `uc  1 a 1 wreg ]
+[v EEPROM_Save@Qd Qd `uc  1 p 1 4 ]
+[v EEPROM_Save@Qt Qt `uc  1 p 1 5 ]
+[v EEPROM_Save@Qr Qr `uc  1 p 1 6 ]
+[v EEPROM_Save@Qg Qg `uc  1 p 1 7 ]
+[v EEPROM_Save@Qb Qb `uc  1 p 1 8 ]
+[v EEPROM_Save@i i `uc  1 a 1 9 ]
+"43
+} 0
+"23
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+{
+[v EEPROM_Write@address address `uc  1 a 1 wreg ]
+[v EEPROM_Write@address address `uc  1 a 1 wreg ]
+[v EEPROM_Write@write write `uc  1 p 1 0 ]
+[v EEPROM_Write@address address `uc  1 a 1 3 ]
+"34
+} 0
+"186 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _CNF_Time CNF_Time `(v  1 e 1 0 ]
+{
+[v CNF_Time@tiempo_ON tiempo_ON `ui  1 p 2 0 ]
+"192
+} 0
+"177
+[v _CNF_Distance CNF_Distance `(v  1 e 1 0 ]
+{
+[v CNF_Distance@dist_ON dist_ON `ui  1 p 2 0 ]
+"183
+} 0
+"195
+[v _CNF_Color CNF_Color `(v  1 e 1 0 ]
+{
+[v CNF_Color@R R `uc  1 a 1 wreg ]
+[v CNF_Color@R R `uc  1 a 1 wreg ]
+[v CNF_Color@G G `uc  1 p 1 14 ]
+[v CNF_Color@B B `uc  1 p 1 15 ]
+"197
+[v CNF_Color@R R `uc  1 a 1 18 ]
+"202
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 11 ]
+[v ___awdiv@counter counter `uc  1 a 1 10 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+"41
+} 0
+"97 C:\Users\Dell\MPLABXProjects\iluminacion\iluminacion\code\iluminacion.X\main.c
+[v _pulsos pulsos `II(v  1 e 1 0 ]
+{
+"127
+} 0
