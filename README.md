@@ -11,4 +11,7 @@ en flutter.
 Para el esp32 se usó un broker mqtt.
 Y el sensor hc-sr04 ultrasonico.
 
+Las simulaciones de hardware se realizaron con proteus
+Y simulide
+
 Diseño de la sencilla interfaz en figma.
